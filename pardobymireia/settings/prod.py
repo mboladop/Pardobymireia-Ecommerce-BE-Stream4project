@@ -1,19 +1,18 @@
 from .base import *
+import dj_database_url
 
 DEBUG = os.environ.get('DEBUG', False)
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'y46cr)e_=gwou^_kp!t)m#-^!czf^)3#^lo%gq1!wy3-%687)k'
-
+# Database
+# https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 DATABASES = {
-'default': {
-   'ENGINE': 'django.db.backends.sqlite3',
-  'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
     }
-}
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = os.environ.get('SECRET_KEY') 
+
+
 
 AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
 AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
@@ -28,4 +27,4 @@ STATICFILES_LOCATION = 'static'
 STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
