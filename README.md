@@ -1,13 +1,13 @@
 [![Build Status](https://travis-ci.org/mboladop/Pardobymireia-ecommerce-BE-stream4project.svg)](https://travis-ci.org/mboladop/Pardobymireia-ecommerce-BE-stream4project)
 
 
-# Smallroundears Website
+# Pardo by Mireia ecommerce Website
  
 ## Overview
  
 ### What is this website for?
  
-This is a website for people to learn about Hippopotami and/or then test them on their knowledge.
+This is an ecommerce website for people to shop all Pardo by Mireia´s latest products and keep them informed of the brands whereabouts.
  
 ### What does it do?
  
@@ -15,7 +15,7 @@ This website has various pages for people to read lots of information about Hipp
  
 ### How does it work
  
-This website uses **AngularJS** to route viewers through the site and control which **Javascript** is executed. The site is styled with **Bootstrap**. The quiz has been created using **Javascript** and modal for enlarging images is displayed using some **JQuery** code. **Bower** has been used to manage package dependencies for deployment of site on github pages. The site can be viewed [HERE](https://futoisaru.github.io/hippo/)
+This website uses **PYTHON3** to route viewers through the site. The site is styled with **Bootstrap**. The quiz has been created using **Javascript** and modal for enlarging images is displayed using some **JQuery** code. **Bower** has been used to manage package dependencies for deployment of site on github pages. The site can be viewed [HERE](https://futoisaru.github.io/hippo/)
 
 ## Features
  
@@ -36,26 +36,17 @@ This website uses **AngularJS** to route viewers through the site and control wh
 ## Tech Used
 
 ### Some the tech used includes:
-- **HTML**, **CSS** and **Javascript**
+- **HTML** and **PYTHON**
   - Base languages used to create website
-- [AngularJS](https://angularjs.org/)
-    - We use **AngularJS** to handle page routing and to build custom directives
 - [Bootstrap](http://getbootstrap.com/)
     - We use **Bootstrap** to give our project a simple, responsive layout
-- [JQuery](https://jquery.com)
-    - Use **JQuery** for boostrap and displaying modal
-- [npm](https://www.npmjs.com/)
-    - We use **npm** to install **http-server** in order to view the site
-- [Bower](https://bower.io)
-    - Using **Bower** to manage package dependencies
+
 
 ## Testing
-- Prototype code was written and tested using jasmine
+- Prototype code was written and tested using travis.ci
 - All code used on the site has been tested to ensure everything is working as expected
 - Site viewed and tested in the following browsers:
   - Google Chrome
-  - Opera
-  - Microsoft Edge
   - Mozilla Firefox
 
 ## Contributing
