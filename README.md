@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/mboladop/Pardobymireia-ecommerce-BE-stream4project.svg)](https://travis-ci.org/mboladop/Pardobymireia-ecommerce-BE-stream4project)
+
+
 # Smallroundears Website
  
 ## Overview
