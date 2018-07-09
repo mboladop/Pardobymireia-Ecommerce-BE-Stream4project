@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for product in products %}
+<p><h3>Name:</h3>{{ product.name }}</p>
+<p><span class="boldtext">Description:</span>{{ product.description }}</p>
+<p><span class="boldtext">Price:</span>{{ product.price }}</p>
+<p><img src="{{MEDIA_URL}}{{product.image}}" width="200px"></img></p>
+<p> 
+    <form method="POST" action = "{% url 'add_to_cart' %}">
+        {% csrf_token %}
+        <input type="hidden" name="product_id" value={{product.id}}>
+        <button type="submit">Add</button>
+    </form>
+</p>
+{% endfor %}
+{% endblock content %}
