@@ -16,4 +16,4 @@ urlpatterns = [
     path('products/', include(products_urls)),
     # path('', include(posts_urls)),
     path('media/<path:path>', serve, {'document_root': settings.MEDIA_ROOT}),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] 
