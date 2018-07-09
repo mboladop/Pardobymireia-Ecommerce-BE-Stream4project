@@ -3,6 +3,7 @@ from django.urls import path, include
 from django.views.static import serve
 from django.conf import settings
 from django.conf.urls import url, include
+from django.conf.urls.static import static
 from accounts import urls as accounts_urls
 from accounts.views import get_index
 from products import urls as products_urls
@@ -13,6 +14,6 @@ urlpatterns = [
     path('', get_index),
     path('accounts/', include(accounts_urls)),
     path('products/', include(products_urls)),
-    #path('', include(posts_urls)),
-    #path('media/<path:path>', serve, {'document_root': settings.MEDIA_ROOT}),
-]
+    # path('', include(posts_urls)),
+    path('media/<path:path>', serve, {'document_root': settings.MEDIA_ROOT}),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

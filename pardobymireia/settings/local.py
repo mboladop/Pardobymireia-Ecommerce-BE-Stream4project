@@ -1,6 +1,6 @@
 from .base import *
 
-DEBUG = False#DEBUG = os.environ.get('DEBUG', True) 
+DEBUG = os.environ.get('DEBUG', True) 
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'y46cr)e_=gwou^_kp!t)m#-^!czf^)3#^lo%gq1!wy3-%687)k'
@@ -18,6 +18,7 @@ DATABASES = {
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
