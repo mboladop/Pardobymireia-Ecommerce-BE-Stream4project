@@ -24,7 +24,7 @@
 <td><strong>Total:</strong></td>
 <td><strong>{{total}} €</strong></td>
 
-<form method="GET" action = "{% url 'checkout_cart' %}">
+<form method="GET" action = "{% url 'checkout' %}">
                 {% csrf_token %}
                 <button type="submit">Checkout</button>
         </form>
@@ -34,4 +34,4 @@
 
 {% endif %}
 
-{% endblock content %}
+{% endblock %}

@@ -13,7 +13,7 @@ import stripe
 from django.conf import settings
 
 # Create your views here.
-def checkout_cart(request):
+def checkout(request):
     if request.method=="POST":
         order_form = OrderForm(request.POST)    
         payment_form = MakePaymentForm(request.POST)

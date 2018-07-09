@@ -42,3 +42,6 @@ def send_confirmation_email(email, username, items_and_total):
     to_email = [email]
     
     send_mail(subject,message,from_email,to_email,fail_silently=True,html_message=html_message)
+    
+    
+    

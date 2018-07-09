@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_forms_bootstrap',
     'storages',
     'accounts',
     'cart',
@@ -114,4 +115,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-#STATIC_URL = '/static/'
+STATIC_URL = '/static/'
+
+STRIPE_PUBLISHABLE = os.environ.get('STRIPE_PUBLISHABLE_KEY')
+STRIPE_SECRET = os.getenv('STRIPE_SECRET_KEY')
+
+MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"

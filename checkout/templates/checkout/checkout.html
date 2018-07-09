@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load bootstrap_tags %}
+{% load static from staticfiles %}
+
+<h1>Checkout</h1>
+
+{% block head_js %}
+{{ block.super }}
+<script src="https://js.stripe.com/v2/" type="text/javascript"></script>
+  <script type="text/javascript">
+      //<![CDATA[
+      Stripe.publishableKey = '{{ publishable }}';
+      //]]>
+  </script>
+  <script type="text/javascript" src="{% static 'checkout/stripe.js' %}"></script>
+{% endblock head_js %}
+
+{% block content %}
+{% include "cart/yourcart.html" %}
+
+<p>
+    <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
+        
+    <legend>Payment Details</legend>
+</p>
+<p>
+    <div id="credit-card-errors" style="display:none">
+      <div class="alert-message block-message error" id="stripe-error-message"></div>
+    </div>
+</p>    
+<p>
+    <div class="form-group col-md-6">
+        {{ order_form|as_bootstrap }}
+    </div>
+</p>
+<p>
+    <div class="form-group col-md-6">
+        {{ payment_form|as_bootstrap }}
+    </div>
+</p>
+    {% csrf_token %}
+<p>
+    <div class="form-group col-md-12">
+      <input class="btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
+    </div>
+</p>
+    </form>
+{% endblock content%}
