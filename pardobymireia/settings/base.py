@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-ALLOWED_HOSTS = ['mireia-ecommerce-mboladop.c9users.io', 'mboladop-mireia-ecommerce.herokuapp.com' ]
+ALLOWED_HOSTS = ['pardobymireia-ecommerce-be-mboladop.c9users.io', 'mboladop-mireia-ecommerce.herokuapp.com' ]
 
 
 # Application definition
@@ -38,6 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'storages',
+    'accounts',
+    'cart',
+    'checkout',
+    'blog',
+    'wishlist',
+    
 ]
 
 MIDDLEWARE = [
