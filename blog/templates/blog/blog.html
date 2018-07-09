@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% block content %}
+    {% for blog in blogs %}
+        <div class="row">
+            <div class="col-md-2 col-sm-3 text-center">
+                <a class="story-img" href="#">
+                    <img src="{{ MEDIA_URL}}avatars/{{blog.owner.username}}.jpg" class="img-circle">
+                </a>
+                
+            </div>
+            <div class="col-md-10 col-sm-9">
+                <h3>{{ blog.title }}</h3>
+                <div class="row">
+                    <div class="col-xs-9">
+                        <p>{{ blog.content|truncatewords:30 }}</p>
+                        <p><a href="{% url 'post_detail' post.id %}"  class="btn btn-default">Read more</a></p>
+                        <p><span class="boldtext">Published on:</span> {{ blog.published_date }} </p>
+                        <p><span class="boldtext">Views:</span> {{blog.views}} | 
+                        <span class="boldtext">Tag:</span> {{ blog.tag }} | 
+                        <span class="boldtext">Likes:</span> {{blog.likes.all | length}} | </p>
+                       
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    {% endfor %}
+{% endblock %}
