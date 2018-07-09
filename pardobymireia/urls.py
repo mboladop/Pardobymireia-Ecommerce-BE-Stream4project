@@ -7,13 +7,14 @@ from django.conf.urls.static import static
 from accounts import urls as accounts_urls
 from accounts.views import get_index
 from products import urls as products_urls
-from products.views import get_products
+from cart import urls as cart_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', get_index),
     path('accounts/', include(accounts_urls)),
     path('products/', include(products_urls)),
+     path('cart/', include(cart_urls)),
     # path('', include(posts_urls)),
     path('media/<path:path>', serve, {'document_root': settings.MEDIA_ROOT}),
 ] 
