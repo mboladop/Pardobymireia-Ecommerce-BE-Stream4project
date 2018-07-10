@@ -1,6 +1,3 @@
-{% extends 'base.html' %}
-
-{% block content %}
 <br>
 <h1>Your Cart</h1>
 
@@ -24,14 +21,7 @@
 <td><strong>Total:</strong></td>
 <td><strong>{{total}} €</strong></td>
 
-<form method="GET" action = "{% url 'checkout' %}">
-                {% csrf_token %}
-                <button type="submit">Checkout</button>
-        </form>
 
 {% else %}
 <h3>Your cart is empty!</h3>
-
 {% endif %}
-
-{% endblock %}

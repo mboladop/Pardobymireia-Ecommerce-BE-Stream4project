@@ -1,7 +1,17 @@
 {% extends 'base.html' %} 
 {% block content %} 
+
+<form action="{% url 'search' %}" method="get">
+   <div class="searchform">
+       <input type="text" placeholder="Item" name="query">
+       <button type="submit">Buscar</button>
+   </div>
+</form>
+
+
 {% for product in products %}
 <p>
+   
     <h3>Name:</h3>{{ product.name }}</p>
 <p><span class="boldtext">Description:</span>{{ product.description }}</p>
 <p><span class="boldtext">Price:</span>{{ product.price }}</p>

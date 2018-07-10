@@ -5,7 +5,7 @@ from .utils import get_cart_items_and_total
 def see_cart(request):
     cart = request.session.get('cart', {})
     context = get_cart_items_and_total(cart)
-    return render(request, "cart/yourcart.html", context)
+    return render(request, "cart/viewcart.html", context)
     
 def add_to_cart(request):   
     # Get the product we're adding

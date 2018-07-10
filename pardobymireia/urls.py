@@ -10,12 +10,14 @@ from products import urls as products_urls
 from cart import urls as cart_urls
 from checkout import urls as checkout_urls
 from blog import urls as blog_urls
+from products import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', get_index, name = 'home'),
     path('accounts/', include(accounts_urls)),
     path('products/', include(products_urls)),
+    path('search/', views.search, name= 'search'),
     path('cart/', include(cart_urls)),
     path('checkout/', include(checkout_urls)),
     path('blog/', include(blog_urls)),
