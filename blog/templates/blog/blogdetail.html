@@ -13,17 +13,19 @@
                 <img class="img-blogpost" src="{{MEDIA_URL}}{{ blog.image }}">
             {% endif %}
             <h3>{{ blog.title }}</h3>
+            
+            {{ perms.all }}
+            
             <div class="row">
                 <div class="col-xs-9">
                     <p>{{ blog.content }}</p>
                     <p><span class="boldtext">Published on:</span> {{ blog.published_date }} </p>
-                    <p><span class="boldtext">Views:</span> {{blog.views}}</p>
                     <p><span class="boldtext">Tag:</span> {{ blog.tag }}</p>
-                    <p><span class="boldtext">Likes:</span> {{blog.likes.all | length}}</p>
-                    <a href="{% url 'get_blogs' %}" class="btn btn-default">Back to Blog</a>
+                    <a href="{% url 'get_blogs' %}" class="btn btn-default">Volver</a>
                     
-                    {% if post.owner == request.user or user.is_superuser %}
-                    <a href="{% url 'edit_blog' blog.id %}" class="btn btn-default">Edit Post</a>
+                    {% if perms.blog.change_blog %}
+                    <a href="{% url 'edit_blog' blog.id %}" class="btn btn-default">Editar Blog</a>
+                    <p><span class="boldtext">Views:</span> {{blog.views}}</p>
                     {% endif %}
                     
                     <hr>
