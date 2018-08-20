@@ -12,6 +12,12 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 
+import ssl
+
+#SSL HACK TO TEST LOCALLY
+
+if hasattr(ssl, '_create_unverified_context'):
+   ssl._create_default_https_context = ssl._create_unverified_context
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -25,7 +31,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-ALLOWED_HOSTS = ['pardobymireia-ecommerce-be-mboladop.c9users.io', 'mboladop-mireia-ecommerce.herokuapp.com' ]
+ALLOWED_HOSTS = ['pardobymireia-ecommerce-be-mboladop.c9users.io', 'mboladop-mireia-ecommerce.herokuapp.com','127.0.0.1' ]
 
 
 # Application definition
@@ -72,6 +78,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+                'products.contexts.get_categories'
             ],
         },
     },

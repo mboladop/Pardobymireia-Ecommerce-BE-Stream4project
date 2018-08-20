@@ -21,8 +21,15 @@
 <body>
   <h1>hello</h1>
   <div id="navbar" class="navbar-collapse collapse">
+      {% for item in categories %}
+      {% if item.id == current %}
+      <strong><p>{{ item.title }} {{ item.id }}</p></strong>
+      {% else %}
+      <p>{{ item.title }} {{ item.id }} {{ current }}</p>
+      {% endif %}
+      {% endfor %} 
     <ul class="nav navbar-nav navbar-right">
-      <a class="navbar-brand" href="{% url 'get_products' %}">Products</a>
+      <!-- <a class="navbar-brand" href="{% url 'get_products' %}">Products</a> -->
       <a class="navbar-brand" href="{% url 'see_cart' %}">Cart</a> 
        <a class="navbar-brand" href="{% url 'get_blogs' %}">Blog</a> 
       {% if user.is_authenticated %}
