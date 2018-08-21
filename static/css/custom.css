@@ -1,0 +1,470 @@
+body, a, p, h1, h2, h3, h4, h5, h6, pre {
+    font-family: 'Avenir-Book', sans-serif !important;
+}
+.container.body{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+a {
+  color: black;  
+}  
+.banner {
+    text-align: center;
+    background-color: black;
+    width: 100%;
+    height: 10%;
+}
+.navbar_adjust{
+    height:150px;
+}
+.landing_navbar{
+    background-color: white;
+}
+.navbar {
+    background-color: white;
+    color: black;
+}
+.dropdown {
+    display: none;
+}
+
+#header_logo{
+    margin-left: 10%;
+    padding-top: 5%;
+}
+header {
+    position: fixed;
+    display: block;
+    color: white;
+}
+hr {
+    height: 1px;
+    border: none;
+    color: #D9DADC;
+    background-color: #D9DADC;
+    margin: 0;
+}
+.megamenu {
+    padding-left: 5%;
+    color: black;
+}
+.cartmenu{
+    width: 18px;
+}
+.part {
+    padding-top: 7%;
+}
+.b_w_img{
+    width: 100%;
+    padding: 0px;
+}
+.bw{
+    padding-top: 30px;
+    overflow: hidden;
+}
+.bwtext{
+    font-family: 'Avenir-Book', sans-serif;
+    font-size: 5em;
+    color:#000000;
+    /* font-weight: bold; */
+    background: #fafafa;
+    opacity: 0.5;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.instagram_layout{
+    width: 70%;
+}
+.main_content {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+.topc{
+    margin-top:50px;
+}
+.top{
+    margin-top:20px;
+}
+.bottom{
+    margin-bottom: 40px;
+}
+.cabecera{
+    width: 100%;
+    
+}
+/*------CAROUSEL-----*/
+.carousel_container{
+    position: relative;
+    padding:0px 40px;
+}
+.carousel-inner img{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-height: 570px;
+}
+
+/*------FOOTER-----*/
+.container.footer{
+    background-color: white;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+footer {
+    bottom: 0;
+    width: 100vw;
+}
+.inside_footer{
+    margin-top: 10px;
+    margin-bottom: 2.5%;
+    text-align: center;
+    width:100%;
+    background-color: white;
+}
+/*-------------------------------------Novedades------------------------------------*/
+.titlenovedades{
+    text-align: center;
+    padding: 20px 0px;
+}
+.novedades{
+    width: 100%;
+}
+/*----------------------------------------BLOG--------------------------------------*/
+.container.blog{
+    width: 50vw;
+    padding: 0em 5em;
+}
+.blog{
+    width: 35em;
+}
+.post_text {
+    padding: 30px 10px;
+
+}
+.title_blog{
+    max-width: 100%;
+    text-align: center;
+    font-weight: 520;
+}
+.postimg{
+    max-width: 100%;
+}
+/*------------------------------------USER PANEL EX----------------------------*/
+.userp_ex{
+    text-align: center;
+    font-weight: 400;
+    text-decoration: underline;
+}
+.container.user_panel{
+    padding-top: 100px;
+    padding-bottom:400px; 
+    width: 80%;
+}
+/*------------------------------------REST OF PROD HOVER----------------------------*/
+.yes {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    padding: 0px;
+}
+
+/*------------------------------------PENDIENTES----------------------------*/
+.overlay2 {
+    position: absolute;
+    top: 0em;
+    bottom: 0em;
+    left: 0em;
+    right: 0em;
+    width: auto;
+    opacity: 0;
+    transition: .3s ease;
+    background-color: #fafafa
+  }
+  
+  .yes:hover .overlay2 {
+    opacity: 0.8;
+  }
+/*------------------------------------PRODUCT----------------------------*/
+.product_description{
+    text-align: left;
+    padding: 20px 20px;
+}
+.qt_input_porduct_profile{
+    margin: 0px;
+    width: 25%;
+    border: 1px #000000 solid;
+}
+/*------------------------------------IG----------------------------*/
+#imgig{
+    margin-left: 100px;
+    margin-bottom: 100px;
+    border: 1px lightgray solid;
+    border-radius: 100%;
+    margin-top: 50px;
+}
+.nameig{
+   overflow: hidden;
+   font-size: 18px;
+   font-weight: 200;
+   font-family: 'Avenir-Book', sans-serif !important;
+}
+#nameig{
+    width: 260px;
+    margin-top: 50px;
+}
+.last{
+    margin-bottom: 30px;
+}
+.ig{
+    padding-top: 30px;
+    overflow: hidden;
+}
+
+.igyes {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    padding: 0px;
+  }
+  
+  .image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .igno{
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 0px;
+  }
+  .overlay {
+    position: absolute;
+    top: 0em;
+    bottom: 0em;
+    left: 0em;
+    right: 0em;
+    width: auto;
+    opacity: 0;
+    transition: .3s ease;
+    background-color: black;
+  }
+  
+  .igyes:hover .overlay {
+    opacity: 0.5;
+  }
+  
+  .icon {
+    font-size: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .icons{
+    display: block;
+    margin: 20px;
+    width:40%;
+  }
+
+  .icons:hover {
+    color: #eee;
+    opacity: 1;
+  }
+
+/*----------------------CONTACT FORM-----------------------*/
+* { box-sizing: border-box;}
+
+h1{ margin: 0; }
+
+.container.contactformbg {
+    width:100vw;
+    background-color: #ffffff;
+    opacity: 0.9;
+}
+.cftitle{
+    color: #ffffff;
+}
+#contactForm { 
+  display: none;
+  z-index: 99;
+  border: 6px;
+  padding: 2em;
+  width: 400px;
+  text-align: center;
+  background: #000000;
+  position: fixed;
+  top:45%;
+  left:45%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%)
+}
+
+input, textarea { 
+  margin: .8em auto;
+  background-color: white;
+  font-family: 'Avenir-Book', sans-serif !important; 
+  text-transform: inherit; 
+  font-size: inherit;
+  display: block; 
+  width: 280px; 
+  padding: .4em;
+}
+textarea { font-family: 'Avenir-Book', sans-serif !important; height: 80px; resize: none; background-color: white;}
+
+.formbtn { 
+  font-family: 'Avenir-Book', sans-serif !important;
+  width: 140px;
+  display: inline-block;
+  background: #ffffff;
+  color: #000000;
+  font-weight: 100;
+  font-size: 1.2em;
+  border: none;
+  height: 30px;
+}
+
+/*-------------------------------------Cartex------------------------------*/
+.row.p_in_cart {
+    padding: 10px 0px;
+    text-align: center;
+}
+.row.incart.top{
+    text-align: center;
+}
+.container.p_in_cart{
+    width: 60%;
+}
+.qt_input{
+    border: 1px grey solid;
+    width: 40%;
+}
+
+/*------------------------------------Mi cuenta----------------------------*/
+.container.login{
+    width: 100%;
+    height: 100%;
+}
+.navbar_adjust_login{
+    height: 50px;
+}
+
+/*------------------------------------Mobile vs----------------------------*/
+@media screen and (max-width: 1254px) {
+    
+    .bwtext{
+        font-size: 2.8em;
+    }
+    .container.blog{
+        width: 60vw;
+        padding: 0em 5em;
+    }
+}
+
+@media screen and (max-width: 1168px) {
+    .topc{
+        margin-top:20px;
+    }
+    .container.blog{
+        width: 70vw;
+        padding: 0em 5em;
+    }
+    .megamenu {
+        display: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .dropbtn {
+        background-color: darkgrey;
+        color: white;
+        padding: 16px;
+        cursor: pointer;
+    }
+    .dropbtn:hover, .dropbtn:focus {
+        background-color: lightgrey;
+    }
+    .icon-bar{
+        background-color: white;
+    }
+    .dropdown {
+        margin: 2%; 
+        display: block;
+    }
+    .dropdown-content {
+        display: none;
+        position: relative;
+        margin: 5%;
+        padding: 5%;
+        background-color: white;
+        min-width: 60px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        overflow-y: scroll !important;
+        max-height: 400px !important;
+    }
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-family: 'Avenir-Book', sans-serif !important;
+    }
+    .dropdown a:hover {
+        background-color: #ddd;
+    }
+    .show {
+        display: block;
+    }
+}
+@media screen and (max-width: 767px) {
+    .topc{
+        margin-top:0px;
+    }
+    .container.blog{
+        width: 80vw;
+        padding: 0em 5em;
+    }
+    .bwtext{
+        font-size: 4em;
+    }
+
+    .nameig{
+        display: none;
+    }
+    #imgig{
+        margin-bottom: 50px;
+        margin-left: 60px;
+    }
+    .cart_data{
+        display: none;
+    }
+    .container.user_panel{
+        padding-top: 100px;
+        padding-bottom:400px; 
+    }
+}
+@media screen and (max-width: 600px) {
+    .container.blog{
+        width: 90vw;
+        padding: 0em 5em;
+    }
+    .carousel {
+        display: none;
+    }
+    .navbar_adjust{
+        height:100px;
+    }
+}
+   

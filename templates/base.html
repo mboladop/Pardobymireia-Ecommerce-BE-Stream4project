@@ -1,62 +1,132 @@
 {% load static from staticfiles %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">
-  <link rel="stylesheet" href="{% static 'css/custom.css' %}">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  {% block head_js %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  {% endblock head_js %}
-
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pardo by Mireia</title>
+    <link rel="stylesheet" href="{% static 'dwcdn/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'dwcdn/css/bootstrap-theme.min.css' %}"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
 </head>
 
 <body>
-  <h1>hello</h1>
-  <div id="navbar" class="navbar-collapse collapse">
-      {% for item in categories %}
-      {% if item.id == current %}
-      <strong><p>{{ item.title }} {{ item.id }}</p></strong>
-      {% else %}
-      <p>{{ item.title }} {{ item.id }} {{ current }}</p>
-      {% endif %}
-      {% endfor %} 
-    <ul class="nav navbar-nav navbar-right">
-      <!-- <a class="navbar-brand" href="{% url 'get_products' %}">Products</a> -->
-      <a class="navbar-brand" href="{% url 'see_cart' %}">Cart</a> 
-       <a class="navbar-brand" href="{% url 'get_blogs' %}">Blog</a> 
-      {% if user.is_authenticated %}
-      <li><a class="navbar-brand" href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Logout</a></li>
-      <li><a class="navbar-brand" href="{% url 'profile' %}"><i class="fa fa-heart"></i> Profile</a></li>
-      {% else %}
-      <li><a class="navbar-brand" href="{% url 'register' %}"><i class="fa fa-user-plus"></i> Register</a></li>
-      <li><a class="navbar-brand" href="{% url 'login' %}"><i class="fa fa-sign-in"></i> Login</a></li>
-      {% endif %}
-    </ul>
-  </div>
+    <div class="container body">
+    <header id="header" class="navbar-fixed-top">
+        <div class="banner ">
+            <span>ENVIO GRATUITO A PARTIR DE 30€</span>
+        </div>
+        
+        <div class="landing_navbar">
+            <div class="row">
+                <div class="col-sm-3 col-xs-3">
+                    <div id="header_logo">
+                            <a href="base.html" target="_self" class="has-category"><img class="logo img-responsive" src="media/images/base/logo.png" alt="Pardo by Mireia Pardo" width="270" height="50"></a>
+                    </div>
+                </div>
+                <ul class="nav navbar-nav megamenu">
+                    {% for item in categories %}
+                    {% if item.id == current %}
+                    <li class="part"><a href="{% url 'get_products' %}" target="_self" class="has-category"><span class="menu-title"><strong></strong>{{ item.title }}</strong></span></a></li>
+                    {% else %}
+                    <li class="part"><a href="{% url 'get_products' %}" target="_self" class="has-category"><span class="menu-title">{{ item.title }}</span></a></li>
+                    {% endif %}
+                    {% endfor %} 
+                    <li class="part"><a href="shopinsta.html" target="_self" class="has-category"><span class="menu-title">@pardobymireiapardo</span></a></li>
+                    {% if user.is_authenticated %}
+                    <li><a class="navbar-brand" href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Logout</a></li>
+                    <li class="part"><a href="{% url 'profile' %}" target="_self" class="has-category"><span class="menu-title"><i class="fas fa-user"></i> Mi cuenta</span></a></li>
+                        {% else %}
+                    <li><a class="navbar-brand" href="{% url 'register' %}"><i class="fa fa-user-plus"></i> Register</a></li>
+                    <li class="part"><a href="{% url 'login' %}" target="_self" class="has-category"><span class="menu-title"><i class="fas fa-user"></i> Mi cuenta</span></a></li>
+                    {% endif %}
+                    <li class="part"><a href="cartex.html" target="_self" class="has-category"><span class="menu-title"><img class='cartmenu' src="media/images/cart/cart2.png" class='cartmenu' alt="carrito"></span></a></li>
+                </ul>
+                <div class="dropdown">
+                    <button onclick="myFunction()" type="button" class="dropbtn navbar-toggle collapsed"
+                    data-toggle="collapse"
+                    data-target="#myCollapsingList">
+                    <!--creates collapsed menu icon appearance-->
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <ul class="nav navbar-nav">
+                        {% for item in categories %}
+                        {% if item.id == current %}
+                        <li class="part"><a href="{% url 'get_products' %}" target="_self" class="has-category"><span class="menu-title"><strong></strong>{{ item.title }}</strong></span></a></li>
+                        {% else %}
+                        <li class="part"><a href="{% url 'get_products' %}" target="_self" class="has-category"><span class="menu-title">{{ item.title }}</span></a></li>
+                        {% endif %}
+                        {% endfor %} 
+                        <li class="part"><a href="shopinsta.html" target="_self" class="has-category"><span class="menu-title">@pardobymireiapardo</span></a></li>
+                        {% if user.is_authenticated %}
+                        <li><a class="navbar-brand" href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Logout</a></li>
+                        <li class="part"><a href="{% url 'profile' %}" target="_self" class="has-category"><span class="menu-title"><i class="fas fa-user"></i> Mi cuenta</span></a></li>
+                         {% else %}
+                        <li><a class="navbar-brand" href="{% url 'register' %}"><i class="fa fa-user-plus"></i> Register</a></li>
+                        <li class="part"><a href="{% url 'login' %}" target="_self" class="has-category"><span class="menu-title"><i class="fas fa-user"></i> Mi cuenta</span></a></li>
+                        {% endif %}
+                        <li class="part"><a href="cartex.html" target="_self" class="has-category"><span class="menu-title"><img class='cartmenu' src="media/images/cart/cart2.png" class='cartmenu' alt="carrito"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <script>
+                    /* When the user clicks on the button, 
+                    toggle between hiding and showing the dropdown content */
+                    function myFunction() {
+                        document.getElementById("myDropdown").classList.toggle("show");
+                    }
+                    // Close the dropdown if the user clicks outside of it
+                    window.onclick = function(event) {
+                        if (!event.target.matches('.dropbtn')) {
 
-  {% if messages %}
-  <div class="alert alert-success">
-    <div class="messages">
-      {% for message in messages %} 
-      {{ message }} 
-      {% endfor %}
-    </div>
-  </div>
-  {% endif %}
+                            var dropdowns = document.getElementsByClassName("dropdown-content");
+                            var i;
+                            for (i = 0; i < dropdowns.length; i++) {
+                                var openDropdown = dropdowns[i];
+                                if (openDropdown.classList.contains('show')) {
+                                    openDropdown.classList.remove('show');
+                                }
+                            }
+                        }
+                    }
+                </script>
+            </div>
+            <hr>
+        </div>
+    </header>
+    <div class='navbar_adjust'></div>
 
-  <hr> 
-  {% block content %} {% endblock %}
+    {% block content %} {% endblock %}
 
+    <footer>
+        <div class="container footer">
+                <hr>
+        <div class="inside_footer row">
+            <div class="col-sm-4">
+                <a target="_blank" href="{% static 'files/cuidado.pdf' %}">Cuidado de las joyas</a> <br>
+                <a target="_blank" href="{% static 'files/tallas.pdf' %}"> Guia de tallas</a>
+            </div>
+            <div class="col-sm-4">
+                <a target="_blank" href="https://www.instagram.com/pardobymireiapardo" target="_self"><i class="fab fa-instagram fa-1x"></i></a>
+                <a target="_blank" href="https://www.facebook.com/mireiapardo" target="_self"><i class="fab fa-facebook-f fa-1x"></i></a>
+            </div>
+            <div class="col-sm-4">
+                <a target="_blank" href="{% static 'files/compra.pdf' %}"> Guia de compras</a> <br>
+                <a target="_blank" href="{% static 'files/cambios.pdf' %}"> Cambios y devoluciones</a>
+            </div>
+        </div>
+        </div>
 
+    </footer>
+</div>
+<script type="text/javascript" src="{% static 'dwcdn/js/jquery-3.3.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'dwcdn/js/bootstrap.min.js' %}"></script>
 </body>
-
 
 </html>
