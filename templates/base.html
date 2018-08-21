@@ -9,8 +9,12 @@
     <title>Pardo by Mireia</title>
     <link rel="stylesheet" href="{% static 'dwcdn/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'dwcdn/css/bootstrap-theme.min.css' %}"> 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    {% block head_js %}
+    <script type="text/javascript" src="{% static 'dwcdn/js/jquery-3.3.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'dwcdn/js/bootstrap.min.js' %}"></script>
+    {% endblock head_js %}
 </head>
 
 <body>
@@ -24,26 +28,26 @@
             <div class="row">
                 <div class="col-sm-3 col-xs-3">
                     <div id="header_logo">
-                            <a href="base.html" target="_self" class="has-category"><img class="logo img-responsive" src="media/images/base/logo.png" alt="Pardo by Mireia Pardo" width="270" height="50"></a>
+                            <a href="#" target="_self" class="has-category"><img class="logo img-responsive" src="{{MEDIA_URL}}{{ logo.png }}" alt="Pardo by Mireia Pardo" width="270" height="50"></a>
                     </div>
                 </div>
                 <ul class="nav navbar-nav megamenu">
                     {% for item in categories %}
                     {% if item.id == current %}
-                    <li class="part"><a href="{% url 'get_products' %}" target="_self" class="has-category"><span class="menu-title"><strong></strong>{{ item.title }}</strong></span></a></li>
+                    <li class="part active"><a href="{% url 'get_products' %}" target="_self" class="has-category"><span class="menu-title"><strong></strong>{{ item.title }}</strong></span></a></li>
                     {% else %}
                     <li class="part"><a href="{% url 'get_products' %}" target="_self" class="has-category"><span class="menu-title">{{ item.title }}</span></a></li>
                     {% endif %}
                     {% endfor %} 
                     <li class="part"><a href="shopinsta.html" target="_self" class="has-category"><span class="menu-title">@pardobymireiapardo</span></a></li>
                     {% if user.is_authenticated %}
-                    <li><a class="navbar-brand" href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Logout</a></li>
+                    <li class="part"><a href="{% url 'logout' %" target="_self" class="has-category"><span class="menu-title"></i> Logout</span></a></li>
                     <li class="part"><a href="{% url 'profile' %}" target="_self" class="has-category"><span class="menu-title"><i class="fas fa-user"></i> Mi cuenta</span></a></li>
-                        {% else %}
-                    <li><a class="navbar-brand" href="{% url 'register' %}"><i class="fa fa-user-plus"></i> Register</a></li>
+                    {% else %}
+                    <li class="part"><a href="{% url 'register' %}" target="_self" class="has-category"><span class="menu-title"></i>Crea tu cuenta</span></a></li>
                     <li class="part"><a href="{% url 'login' %}" target="_self" class="has-category"><span class="menu-title"><i class="fas fa-user"></i> Mi cuenta</span></a></li>
                     {% endif %}
-                    <li class="part"><a href="cartex.html" target="_self" class="has-category"><span class="menu-title"><img class='cartmenu' src="media/images/cart/cart2.png" class='cartmenu' alt="carrito"></span></a></li>
+                    <li class="part"><a href="{% url 'see_cart' %}" target="_self" class="has-category"><span class="menu-title"><img class='cartmenu' src="media/images/cart/cart2.png" class='cartmenu' alt="carrito"></span></a></li>
                 </ul>
                 <div class="dropdown">
                     <button onclick="myFunction()" type="button" class="dropbtn navbar-toggle collapsed"
@@ -58,7 +62,7 @@
                         <ul class="nav navbar-nav">
                         {% for item in categories %}
                         {% if item.id == current %}
-                        <li class="part"><a href="{% url 'get_products' %}" target="_self" class="has-category"><span class="menu-title"><strong></strong>{{ item.title }}</strong></span></a></li>
+                        <li class="part active"><a href="{% url 'get_products' %}" target="_self" class="has-category"><span class="menu-title"><strong></strong>{{ item.title }}</strong></span></a></li>
                         {% else %}
                         <li class="part"><a href="{% url 'get_products' %}" target="_self" class="has-category"><span class="menu-title">{{ item.title }}</span></a></li>
                         {% endif %}
@@ -71,7 +75,7 @@
                         <li><a class="navbar-brand" href="{% url 'register' %}"><i class="fa fa-user-plus"></i> Register</a></li>
                         <li class="part"><a href="{% url 'login' %}" target="_self" class="has-category"><span class="menu-title"><i class="fas fa-user"></i> Mi cuenta</span></a></li>
                         {% endif %}
-                        <li class="part"><a href="cartex.html" target="_self" class="has-category"><span class="menu-title"><img class='cartmenu' src="media/images/cart/cart2.png" class='cartmenu' alt="carrito"></span></a></li>
+                        <li class="part"><a href="{% url 'see_cart' %}" target="_self" class="has-category"><span class="menu-title"><img class='cartmenu' src="media/images/cart/cart2.png" class='cartmenu' alt="carrito"></span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -125,8 +129,7 @@
 
     </footer>
 </div>
-<script type="text/javascript" src="{% static 'dwcdn/js/jquery-3.3.1.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'dwcdn/js/bootstrap.min.js' %}"></script>
+
 </body>
 
 </html>

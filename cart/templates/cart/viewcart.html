@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Cart</h1>
 
 {% include 'cart/showcart.html' %}
 
+<div  style='text-align: right; padding-right: 15%; padding-bottom: 3%; padding-top: 2%;' class="container">
 <a href="{% url 'checkout' %}" class="btn btn-success" role="button">Checkout</a>
-
+</div>
 {% endblock content %}

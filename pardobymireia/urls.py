@@ -17,7 +17,6 @@ urlpatterns = [
     path('', get_index, name = 'home'),
     path('accounts/', include(accounts_urls)),
     path('products/', include(products_urls)),
-    path('search/', views.search, name= 'search'),
     path('cart/', include(cart_urls)),
     path('checkout/', include(checkout_urls)),
     path('blog/', include(blog_urls)),
