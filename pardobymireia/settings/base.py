@@ -16,8 +16,8 @@ import ssl
 
 #SSL HACK to collect static on prod
 
-if hasattr(ssl, '_create_unverified_context'):
-    ssl._create_default_https_context = ssl._create_unverified_context
+# if hasattr(ssl, '_create_unverified_context'):
+#     ssl._create_default_https_context = ssl._create_unverified_context
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
