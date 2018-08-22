@@ -29,14 +29,14 @@ def charge_card(stripe_token, total):
 
 def send_confirmation_email(email, username, items_and_total):
     context = {
-        'site_name': "Blah Blah dot com",
+        'site_name': "pardobymireiapardo.com",
         'user': username,
     }
     context.update(items_and_total)
     message = render_to_string('checkout/text_confirmation_email.html', context)
     html_message = render_to_string('checkout/html_confirmation_email.html', context)
                 
-    subject = 'Thanks for buying our stuff!'
+    subject = '¡Gracias por tu compra!'
     message = message
     from_email = settings.SYSTEM_EMAIL
     to_email = [email]

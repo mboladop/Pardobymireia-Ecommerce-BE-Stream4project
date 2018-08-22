@@ -36,10 +36,10 @@ def checkout(request):
             try:
                 customer = charge_card(stripe_token, total)
             except stripe.error.CardError:
-                messages.warning(request, "Your card was declined!")
+                messages.warning(request, "¡Pago no completado!")
 
             if customer.paid:
-                messages.success(request, "You have successfully paid")
+                messages.success(request, "¡Pago realizado correctamente!")
 
                 # Send Email
                 send_confirmation_email(request.user.email, request.user, items_and_total)

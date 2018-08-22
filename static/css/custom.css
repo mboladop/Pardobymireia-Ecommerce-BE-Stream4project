@@ -108,7 +108,7 @@ button{
     color:#000000 !important;
     border-radius: 0px !important;
 }
-}
+
 /*------CAROUSEL-----*/
 .carousel_container{
     position: relative;
@@ -383,7 +383,15 @@ textarea { font-family: 'Avenir-Book', sans-serif !important; height: 80px; resi
     border: 1px grey solid;
     width: 40%;
 }
-
+.checkout_btn{
+    text-align: right; 
+    padding-right: 15%; 
+    padding-bottom: 3%; 
+    padding-top: 2%;
+}
+.pay_btn{
+    text-align: center;
+}
 /*------------------------------------Mi cuenta----------------------------*/
 .container.login{
     width: 100%;
@@ -463,11 +471,11 @@ textarea { font-family: 'Avenir-Book', sans-serif !important; height: 80px; resi
     }
 }
 @media screen and (max-width: 1063px) and (min-width: 767px) {
-.add_and_profile{
-    position: absolute;
-    top:10%;
-    left: 20.3%;
-}
+    .add_and_profile{
+        position: absolute;
+        top:10%;
+        left: 20.3%;
+    }
 }
 @media screen and (max-width: 767px) {
     .topc{

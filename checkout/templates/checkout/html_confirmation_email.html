@@ -1,7 +1,8 @@
 {% autoescape off %}
-You're receiving this e-mail because you bought something at {{ site_name }}.
+¡Hola: {{ user.username }} !
 
-Your username, in case you've forgotten: {{ user.username }}
+
+Tu pedido en {{ site_name }} :
 
 <table class="table">
     <thead>
@@ -34,8 +35,8 @@ Your username, in case you've forgotten: {{ user.username }}
     </tbody>
 </table>
 
-Thanks for using our site!
+¡Gracias por tu compra!
 
-The {{ site_name }} team.
+Pardo by Mireia Pardo.
 
 {% endautoescape %}

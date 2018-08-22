@@ -1,4 +1,4 @@
-
+{% block content %}
 <div class="container p_in_cart">      
         {% if cart_items|length > 0 %}
         <div class="row incart top">
@@ -49,7 +49,7 @@
 
 
 {% endfor %}
-</div>  
+
         
 <h5 style='text-align: right; padding-right: 25%;' class ='cart_data'><strong>Total: {{total}}€</strong></h5>
 
@@ -57,3 +57,5 @@
 {% else %}
 <h3 style='text-align: center;'>Your cart is empty!</h3>
 {% endif %}
+  
+{% endblock content %}

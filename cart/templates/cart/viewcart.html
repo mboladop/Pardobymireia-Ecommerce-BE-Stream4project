@@ -3,8 +3,9 @@
 {% block content %}
 
 {% include 'cart/showcart.html' %}
-
-<div  style='text-align: right; padding-right: 15%; padding-bottom: 3%; padding-top: 2%;' class="container">
+ 
+<div class="container checkout_btn">
 <a href="{% url 'checkout' %}" class="btn" role="button">Checkout</a>
 </div>
+</div> 
 {% endblock content %}
