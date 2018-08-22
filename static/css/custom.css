@@ -95,7 +95,19 @@ hr {
 }
 .cabecera{
     width: 100%;
-    
+}
+button{
+    background-color: transparent !important;
+    border: 1px #000000 solid !important;
+    padding: 5px 10px;
+}
+.btn{
+    background-color: none !important;
+    border: 1px #000000 solid !important;
+    font-family: 'Avenir-Book', sans-serif !important;
+    color:#000000 !important;
+    border-radius: 0px !important;
+}
 }
 /*------CAROUSEL-----*/
 .carousel_container{
@@ -201,6 +213,28 @@ footer {
     width: 25%;
     border: 1px #000000 solid;
 }
+button.btn_addtocart{
+    background-color: transparent !important;
+    border: none !important;
+}
+form.form_addtocart{
+    padding: 0px;
+}
+img.profile_prod{
+    width: 30px;
+}
+.add_and_profile{
+    position: absolute;
+    top:25%;
+    left: 33.3%;
+}
+.profile{
+    padding: 10px;
+}
+.product_price{
+    text-align: center;
+    padding: 5px;
+}
 /*------------------------------------IG----------------------------*/
 #imgig{
     margin-left: 100px;
@@ -261,7 +295,7 @@ footer {
     opacity: 0.5;
   }
   
-  .icon {
+  container.icon {
     font-size: 100px;
     position: absolute;
     top: 50%;
@@ -428,6 +462,13 @@ textarea { font-family: 'Avenir-Book', sans-serif !important; height: 80px; resi
         display: block;
     }
 }
+@media screen and (max-width: 1063px) and (min-width: 767px) {
+.add_and_profile{
+    position: absolute;
+    top:10%;
+    left: 20.3%;
+}
+}
 @media screen and (max-width: 767px) {
     .topc{
         margin-top:0px;
@@ -439,7 +480,6 @@ textarea { font-family: 'Avenir-Book', sans-serif !important; height: 80px; resi
     .bwtext{
         font-size: 4em;
     }
-
     .nameig{
         display: none;
     }
