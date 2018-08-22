@@ -1,28 +1,44 @@
 {% extends 'base.html' %} 
 {% block content %} 
 
-
-
+<div class="container cabecera">
+    <div class="row topc bottom">
+        <div class="col-sm-12">
+            <img class='cabecera' src="{{MEDIA_URL}}images/base/cabecera.png" alt="">
+        </div>
+    </div>
+</div>
+<hr>
+<div class="container instagram_layout">
 
 {% for product in products %}
-
-      
-<p><h3>Name:</h3>{{ product.name }}</p>
-<p><span class="boldtext">Description:</span>{{ product.description }}</p>
-<p><span class="boldtext">Price:</span>{{ product.price }}</p>
-<p><img src="{{MEDIA_URL}}{{product.image}}" width="200px"></img>
-</p>
-<p>
-
-    <form method="POST" action="{% url 'add_to_cart' %}">
-        {% csrf_token %}
-        <input type="hidden" name="product_id" value={{product.id}}>
-        <button type="submit">Add</button>
-    </form>
-
-</p>
-
-
+    <div class="row top pend">
+        <div class="col-sm-4 ig" >
+            <div class="container yes">
+                <img src="{{MEDIA_URL}}{{product.image}}" width="100%" alt="product"><br><br>
+                <hr>
+                <span><p class="product_price">{{ product.price }} €</p></span>
+                <div class="overlay2">
+                    <div class="icon">
+                        <div class="add_and_profile">
+                            
+                            <form class='form_addtocart' method="POST" action="{% url 'add_to_cart' %}">
+                                {% csrf_token %}
+                                <input type="hidden" name="product_id" value={{product.id}}>
+                                <button class='btn_addtocart' type="submit"><img src="{{MEDIA_URL}}images/cart/prodcart2.png"  class="fa icons" alt="Añadir al carrito"></button>
+                            </form>
+                            <div class="profile">
+                            <a href="product.html" title="Product Profile">
+                                <img src="{{MEDIA_URL}}images/cart/note2.png" class="fa icons profile_prod" alt="Descripción del producto">
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endfor %} 
+</div>
 
 {% endblock %}
