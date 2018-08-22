@@ -350,6 +350,7 @@ textarea { font-family: 'Avenir-Book', sans-serif !important; height: 80px; resi
     width: 40%;
 }
 
+
 /*------------------------------------Mi cuenta----------------------------*/
 .container.login{
     width: 100%;
@@ -373,7 +374,7 @@ textarea { font-family: 'Avenir-Book', sans-serif !important; height: 80px; resi
 
 @media screen and (max-width: 1168px) {
     .topc{
-        margin-top:20px;
+        margin-top:30px;
     }
     .container.blog{
         width: 70vw;

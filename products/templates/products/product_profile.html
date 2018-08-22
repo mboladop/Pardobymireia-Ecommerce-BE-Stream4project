@@ -1,0 +1,25 @@
+{% extends 'base.html' %} 
+{% load static from staticfiles %}
+{% block content %} 
+
+<div class="container">
+        <div class="row bottom top">
+            <div class="col-sm-6 col-xs-6">
+                <img src="{{MEDIA_URL}}{{product.image}}" width='90%' alt="">
+            </div>
+            <div class="col-sm-6 col-xs-6 product_description">
+                <h4><strong>{{product.name}}</strong></h4><br><br>
+                <p>{{product.description}}</p>
+                <br>
+
+                <a target="_blank" href="{% static 'files/cuidado.pdf' %}"><strong>Cuidados</strong></a> |
+                <a target="_blank" href="{% static 'files/tallas.pdf' %}"><strong>Guia de tallas</strong></a><br><br>
+                
+                <input type="number" name="cantidad" class="qt_input_porduct_profile" min="1" max="100" placeholder="Elegir cantidad"></input><br>
+                <input type="number" name="cantidad" class="qt_input_porduct_profile" min="1" max="6" placeholder="Elegir talla"></input><br><br>
+                
+            </div>
+        </div>
+</div>
+
+{% endblock %}

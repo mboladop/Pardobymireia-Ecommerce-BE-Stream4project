@@ -21,14 +21,13 @@
                 <div class="overlay2">
                     <div class="icon">
                         <div class="add_and_profile">
-                            
                             <form class='form_addtocart' method="POST" action="{% url 'add_to_cart' %}">
                                 {% csrf_token %}
                                 <input type="hidden" name="product_id" value={{product.id}}>
                                 <button class='btn_addtocart' type="submit"><img src="{{MEDIA_URL}}images/cart/prodcart2.png"  class="fa icons" alt="Añadir al carrito"></button>
                             </form>
                             <div class="profile">
-                            <a href="product.html" title="Product Profile">
+                            <a href="{% url 'product_profile' product.id %}" title="Product Profile">
                                 <img src="{{MEDIA_URL}}images/cart/note2.png" class="fa icons profile_prod" alt="Descripción del producto">
                             </a>
                             </div>
