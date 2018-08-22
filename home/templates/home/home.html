@@ -1,0 +1,71 @@
+{% extends 'base.html' %} 
+{% block content %} 
+
+<div class="container main_content">
+        <div class="row carousel_container">
+            <div class="col-md-12">
+                <!--SLIDING IMAGES-->
+                <div id="carousel_id" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel_id" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel_id" data-slide-to="1"></li>
+                    <li data-target="#carousel_id" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="{{MEDIA_URL}}images/carousel/carr1.jpg">
+                    </div>
+                    <div class="item">
+                        <img src="{{MEDIA_URL}}images/carousel/carr2.jpg">
+                    </div>
+                    <div class="item">
+                        <img src="{{MEDIA_URL}}images/carousel/carr3.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="container bottom b_w_img">
+                    <div class="row">
+                        <div class="col-sm-4 bw" ><a href="{% url 'novedades' %}"><img id='bw1' src="{{MEDIA_URL}}images/bw_img/bw1.png" width='100%' alt=""><div class="bwtext">Novedades</div></a></div>
+                        <div class="col-sm-4 bw" ><a href="{% url 'get_blogs' %}"><img id='bw2' src="{{MEDIA_URL}}images/bw_img/bw2.png" width='100%' alt=""><div style='padding: 0px 1.55em;'class="bwtext">Blog</div></a></div>
+                        <div class="col-sm-4 bw" ><a class='contact' href="#contactForm" target="_self" class="has-category"><img id='bw3' src="{{MEDIA_URL}}images/bw_img/bw3.png" width='100%' alt=""><div style='padding: 0px 1em;'class="bwtext">Contacta</div></a></div>
+                    </div>
+            </div>
+        </div>
+    
+    </div>
+
+<!--CONTACT FORM POP UP-->
+<div class="container contactformbg">
+    <div id="contactForm">
+        <h1 class='cftitle'>¿Alguna duda?</h1>
+        <h4 class='cftitle'>¡Escribenos!</h4>
+            <form action='https://formspree.io/pardobymireia@gmail.com' method="POST">
+                <input name="name" placeholder="Nombre" type="text" required />
+                <input name="_replyto" placeholder="Email" type="email" required />
+                <input name="message" placeholder="Tema" type="text" required />
+                <textarea placeholder="Consulta"></textarea>
+                <input class="btn btn-success formbtn" type="submit" />
+                <input class="btn btn-success formbtn" type="reset" />
+            </form>
+    </div>
+</div>
+<!--END CONTACT FORM POP UP-->
+</div>
+<script>
+    $(document).ready(function(){
+    $("#bw1").hover(
+        function() {$(this).attr("src","{{MEDIA_URL}}images/bw_img/c1.png");},
+        function() {$(this).attr("src","{{MEDIA_URL}}images/bw_img/bw1.png");
+    });
+    $("#bw2").hover(
+        function() {$(this).attr("src","{{MEDIA_URL}}images/bw_img/c2.png");},
+        function() {$(this).attr("src","{{MEDIA_URL}}images/bw_img/bw2.png");
+    });
+    $("#bw3").hover(
+        function() {$(this).attr("src","{{MEDIA_URL}}images/bw_img/c3.png");},
+        function() {$(this).attr("src","{{MEDIA_URL}}images/bw_img/bw3.png");
+    });
+    });
+</script>
+{% endblock %}
