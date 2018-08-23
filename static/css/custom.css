@@ -398,6 +398,9 @@ textarea { font-family: 'Avenir-Book', sans-serif !important; height: 80px; resi
     margin-bottom: 20px;
     padding: 15px 20px !important;
 }
+.navbar_adjust_cart{
+    height:70px;
+}
 /*------------------------------------Mi cuenta----------------------------*/
 .container.login{
     width: 100%;

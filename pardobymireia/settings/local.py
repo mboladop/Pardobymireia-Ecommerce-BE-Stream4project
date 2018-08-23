@@ -1,7 +1,7 @@
 from .base import *
 
-DEBUG = os.environ.get('DEBUG', True) 
-
+DEBUG = True 
+SECRET_KEY = os.environ.get('SECRET_KEY') 
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'y46cr)e_=gwou^_kp!t)m#-^!czf^)3#^lo%gq1!wy3-%687)k'
