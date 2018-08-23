@@ -1,4 +1,34 @@
 {% extends 'base.html' %} 
 {% block content %} 
-<h1>hello</h1>
+
+    <div class="container instagram_layout">
+        
+        <div class="row 1">
+                <div class="col-sm-4 col-xs-12 ig imgig" ><img id='imgig' src="{{MEDIA_URL}}images/ig/imgig.png" width='50%' alt="instagram images"></div>
+                <div class="col-sm-8 ig nameig" ><img id='nameig' src="{{MEDIA_URL}}images/ig/nameig.png" alt=""><p style="padding-left: 10px; padding-top: 30px;">Son únicas y diferentes.</p><p style="padding-left: 10px;">Los pequeños detalles importan.</p><p style="padding-left: 10px;"> Joyas.</p></div>
+        </div>
+
+        <hr>
+
+        <!-- <div class="row 2">
+            {% for product in products %}
+            <div class="col-sm-4 ig" >
+                <div class="container igyes">
+                    <img src="{{MEDIA_URL}}{{product.image}}" width='100%' alt="">
+                    <div class="overlay">
+                        <div class="icon">
+                            <img src="{{MEDIA_URL}}images/cart/prodcart.png"  class="fa icons add" alt="Añadir al carrito">
+                            <a href="{% url 'product_profile' product.id %}" title="Product Profile">
+                                <img src="{{MEDIA_URL}}images/cart/note.png"  class="fa icons" alt="Perfil de producto">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class="row">
+            {% endif %}
+        {% endfor %}
+        </div>  -->
+    </div> 
 {% endblock %}
