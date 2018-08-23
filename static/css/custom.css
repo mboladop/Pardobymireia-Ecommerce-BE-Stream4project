@@ -389,6 +389,15 @@ textarea { font-family: 'Avenir-Book', sans-serif !important; height: 80px; resi
 .pay_btn{
     text-align: center;
 }
+.container.checkout{
+    width: 100vw;
+}
+.payment_bg{
+    background-color: #dbd8d867;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 15px 20px !important;
+}
 /*------------------------------------Mi cuenta----------------------------*/
 .container.login{
     width: 100%;
@@ -397,7 +406,12 @@ textarea { font-family: 'Avenir-Book', sans-serif !important; height: 80px; resi
 .navbar_adjust_login{
     height: 50px;
 }
-
+.login_input{
+    background-color: lightgrey;
+}
+label{
+    font-family: 'Avenir-Book', sans-serif !important;  
+}
 /*------------------------------------Mobile vs----------------------------*/
 @media screen and (max-width: 1254px) {
     
