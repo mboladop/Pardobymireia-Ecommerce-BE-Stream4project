@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="{% static 'dwcdn/css/bootstrap.min1.css' %}">
     <link rel="stylesheet" href="{% static 'dwcdn/css/bootstrap-theme.min1.css' %}"> 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/login/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login/util.css' %}">
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
     {% block head_js %}
     <script type="text/javascript" src="{% static 'dwcdn/js/jquery.min.js' %}"></script>
@@ -42,7 +44,7 @@
                     {% endfor %} 
                     <li class="part"><a href="shopinsta.html" target="_self" class="has-category"><span class="menu-title">@pardobymireiapardo</span></a></li>
                     {% if user.is_authenticated %}
-                    <li class="part"><a href="{% url 'logout' %" target="_self" class="has-category"><span class="menu-title"></i> Logout</span></a></li>
+                    <li class="part"><a href="{% url 'logout' %}" target="_self" class="has-category"><span class="menu-title"></i> Logout</span></a></li>
                     <li class="part"><a href="{% url 'profile' %}" target="_self" class="has-category"><span class="menu-title"><i class="fas fa-user"></i> Mi cuenta</span></a></li>
                     {% else %}
                     <li class="part"><a href="{% url 'register' %}" target="_self" class="has-category"><span class="menu-title"></i>Crea tu cuenta</span></a></li>
