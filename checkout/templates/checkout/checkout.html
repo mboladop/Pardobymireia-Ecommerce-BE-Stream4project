@@ -17,33 +17,43 @@
 
 {% block content %}
 {% include "cart/showcart.html" %}
-
-<p>
-    <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
-        
-    <legend>Detalles de pago</legend>
-</p>
-<p>
-    <div id="credit-card-errors" style="display:none">
-      <div class="alert-message block-message error" id="stripe-error-message"></div>
+<div class="container checkout">
+    <div class="row ">
+        <div class="col-sm-6 col-sm-offset-3 col-xs-12 payment_bg">
+            
+            <p>
+                <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
+                <legend style='text-align: center;'>Detalles de pago</legend>
+            </p>
+            <p>
+                <div id="credit-card-errors" style="display:none">
+                    <div class="alert-message block-message error" id="stripe-error-message"></div>
+                </div>
+            </p>    
+            <p>
+                <div class="form-group col-md-6">
+                    {{ order_form|as_bootstrap }}
+                </div>
+            </p>
+            <p>
+                <div class="form-group col-md-6">
+                    {{ payment_form|as_bootstrap }}
+                </div>
+            </p>
+                {% csrf_token %}
+            <p>
+                
+                <div class="form-group col-md-12 pay_btn">
+                        <div class="container-login100-form-btn">
+                                <div class="wrap-login100-form-btn">
+                                    <div class="login100-form-bgbtn"></div>
+                    <input class="login_input" id="submit_payment_btn" name="commit" type="submit" value="Pagar">
+                </div>
+                </div>
+            </p>
+                </form>
+        </div>
     </div>
-</p>    
-<p>
-    <div class="form-group col-md-6">
-        {{ order_form|as_bootstrap }}
-    </div>
-</p>
-<p>
-    <div class="form-group col-md-6">
-        {{ payment_form|as_bootstrap }}
-    </div>
-</p>
-    {% csrf_token %}
-<p>
-    <div class="form-group col-md-12 pay_btn">
-      <input class="btn" id="submit_payment_btn" name="commit" type="submit" value="Pagar">
-    </div>
-</p>
-    </form>
-</div> 
+</div>
 {% endblock content%}
+</div>

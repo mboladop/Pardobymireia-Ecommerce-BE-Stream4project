@@ -14,6 +14,18 @@ class MakePaymentForm(forms.Form):
     
     
 class OrderForm(forms.ModelForm):
+    
+    full_name = forms.CharField(label='Nombre Completo')
+    phone_number = forms.CharField(label='Número de telefono')
+    country = forms.CharField(label='Pais')
+    postcode = forms.CharField(label='Codigo postal')
+    town_or_city = forms.CharField(label='Ciudad')
+    street_address_1 = forms.CharField(label='Direccion 1')
+    street_address_2 = forms.CharField(label='Direccion 2')
+    county = forms.CharField(label='Comunidad')
+
     class Meta:
         model = Order
         fields = ('full_name', 'phone_number', 'country', 'postcode', 'town_or_city', 'street_address_1', 'street_address_2', 'county')
+        
+        
