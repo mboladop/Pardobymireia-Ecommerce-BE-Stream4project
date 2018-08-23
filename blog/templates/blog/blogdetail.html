@@ -1,34 +1,29 @@
 {% extends "base.html" %}
 {% load static from staticfiles %}
 {% block content %}
+<div class='navbar_adjust_cart'></div>
     <div class="row">
-        <div class="col-md-2 col-sm-3 text-center">
-            <a class="story-img" href="#">
-                <img src="{{ MEDIA_URL}}avatars/{{blog.owner.username}}.jpg" class="img-circle">
-            </a>
+        
+        <div class="col-sm-12">
+            <div class="center">
+                {% if blog.image %}
+                    <img class="img-blogpost " src="{{MEDIA_URL}}{{ blog.image }}" width='66%'>
+                {% endif %}
+                <h3 class='title_blog'>{{ blog.title }}</h3>
+            </div>
             
-        </div>
-        <div class="col-sm-10 col-md-9">
-            {% if blog.image %}
-                <img class="img-blogpost" src="{{MEDIA_URL}}{{ blog.image }}">
-            {% endif %}
-            <h3>{{ blog.title }}</h3>
-            
-            {{ perms.all }}
             
             <div class="row">
-                <div class="col-xs-9">
+                <div class="col-sm-8 col-sm-offset-2 ">
                     <p>{{ blog.content }}</p>
                     <p><span class="boldtext">Published on:</span> {{ blog.published_date }} </p>
                     <p><span class="boldtext">Tag:</span> {{ blog.tag }}</p>
-                    <a href="{% url 'get_blogs' %}" class="btn btn-default">Volver</a>
-                    
+                    <p class='right'><a href="{% url 'get_blogs' %}" class="btn" >Volver</a></p>
+                    <div class='navbar_adjust'></div>
                     {% if perms.blog.change_blog %}
-                    <a href="{% url 'edit_blog' blog.id %}" class="btn btn-default">Editar Blog</a>
-                    <p><span class="boldtext">Views:</span> {{blog.views}}</p>
+                    <p><span class="boldtext">Visitas:</span> {{blog.views}}</p>
                     {% endif %}
-                    
-                    <hr>
+                    <br>
                 </div>
             </div>
         </div>
