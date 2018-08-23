@@ -11,6 +11,7 @@ from cart import urls as cart_urls
 from checkout import urls as checkout_urls
 from blog import urls as blog_urls
 from home import urls as home_urls
+from shopinstagram import urls as shopinstagram_urls
 from products import views
 
 urlpatterns = [
@@ -22,5 +23,6 @@ urlpatterns = [
     path('checkout/', include(checkout_urls)),
     path('blog/', include(blog_urls)),
     path('home/', include(home_urls)),
+    path('shopinstagram/', include(shopinstagram_urls)),
     path('media/<path:path>', serve, {'document_root': settings.MEDIA_ROOT}),
 ] 
