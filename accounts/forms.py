@@ -7,16 +7,18 @@ class UserLoginForm(forms.Form):
     """
     Used by the user to enter login credentials
     """
-    username = forms.CharField()
-    password = forms.CharField(widget=forms.PasswordInput)
+    username = forms.CharField(label='Usuario')
+    password = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
     
 class UserRegistrationForm(UserCreationForm):
     """
     Used by the user to sign up with the website
     """
-    password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
+    username = forms.CharField(label='Usuario')
+    email = forms.CharField(label='Email')
+    password1 = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
     password2 = forms.CharField(
-        label='Password Confirmation',
+        label='Confirmar Contraseña',
         widget=forms.PasswordInput
     )
 
@@ -28,7 +30,7 @@ class UserRegistrationForm(UserCreationForm):
         email = self.cleaned_data.get('email')
         username = self.cleaned_data.get('username')
         if User.objects.filter(email=email).exclude(username=username):
-            raise forms.ValidationError(u'Email addresses must be unique.')
+            raise forms.ValidationError(u'El email debe ser único.')
         return email
 
     def clean_password2(self):
@@ -36,7 +38,7 @@ class UserRegistrationForm(UserCreationForm):
         password2 = self.cleaned_data.get('password2')
 
         if password1 != password2:
-            raise ValidationError("Passwords do not match")
+            raise ValidationError("Porfavor usa la misma contraseña en ambos casos.")
 
         return password2
         

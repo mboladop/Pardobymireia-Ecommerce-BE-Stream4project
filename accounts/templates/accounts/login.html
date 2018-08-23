@@ -2,13 +2,50 @@
 {% load bootstrap_tags %}
 
 {% block content %}
-<h3>Log in</h3>
+<div class='navbar_adjust_login'></div>
 
-<form method='POST'>
-    {% csrf_token %}
-    
-    {{ form |as_bootstrap }}
-    <input type="submit" value="login" />
-    
-</form>
+<div class="container login">
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 col-xs-12">
+            <div class="limiter">
+                <div class="container-login100">
+                    <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+                        <form method='POST' class="login100-form validate-form">
+                            {% csrf_token %}
+                            {{ form |as_bootstrap }}
+                            <div class="container-login100-form-btn">
+                                <div class="wrap-login100-form-btn">
+                                    <div class="login100-form-bgbtn"></div>
+                                        <input  class='login_input' type="submit" value="Login" />
+                                </div>
+                            <div class="text-right p-t-8 p-b-31">
+                                <a href="#">
+                                    ¿Olvidaste tu contraseña?
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {% endblock content%}
