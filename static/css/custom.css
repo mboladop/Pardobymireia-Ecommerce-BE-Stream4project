@@ -108,7 +108,16 @@ button{
     color:#000000 !important;
     border-radius: 0px !important;
 }
-
+.center{
+    text-align: center;
+}
+.right{
+    text-align-last: right;
+}
+.boldtext{
+    font-weight: bold;
+    font-family: 'Avenir-Book', sans-serif !important;
+}
 /*------CAROUSEL-----*/
 .carousel_container{
     position: relative;
@@ -164,9 +173,14 @@ footer {
     max-width: 100%;
     text-align: center;
     font-weight: 520;
+    padding: 25px 5px;
+    letter-spacing: 2.5px;
 }
 .postimg{
     max-width: 100%;
+}
+.navbar_adjust_blog{
+    height:10px;
 }
 /*------------------------------------USER PANEL EX----------------------------*/
 .userp_ex{
@@ -401,6 +415,7 @@ textarea { font-family: 'Avenir-Book', sans-serif !important; height: 80px; resi
 .navbar_adjust_cart{
     height:70px;
 }
+
 /*------------------------------------Mi cuenta----------------------------*/
 .container.login{
     width: 100%;
