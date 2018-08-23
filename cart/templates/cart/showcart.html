@@ -2,6 +2,7 @@
 
 <div class="container p_in_cart">      
         {% if cart_items|length > 0 %}
+        <div class='navbar_adjust_cart'></div>
         <div class="row incart top">
                 <div class="col-sm-3 col-xs-6">
                         <h4>Producto</h4>
@@ -49,9 +50,9 @@
         <hr>
 
 
-{% endfor %}
+        {% endfor %}
 
-        
+    
 <h5 style='text-align: right; padding-right: 25%;' class ='cart_data'><strong>Total: {{total}}€</strong></h5>
 
 </div>
