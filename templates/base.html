@@ -42,7 +42,7 @@
                     <li class="part"><a href="{% url 'get_products' %}{{ item.id }}" target="_self" class="has-category"><span class="menu-title">{{ item.title }}</span></a></li>
                     {% endif %}
                     {% endfor %} 
-                    <li class="part"><a href="shopinsta.html" target="_self" class="has-category"><span class="menu-title">@pardobymireiapardo</span></a></li>
+                    <li class="part"><a href="{% url 'shopinstagram' %}" target="_self" class="has-category"><span class="menu-title">@pardobymireiapardo</span></a></li>
                     {% if user.is_authenticated %}
                     <li class="part"><a href="{% url 'logout' %}" target="_self" class="has-category"><span class="menu-title"></i> Logout</span></a></li>
                     <li class="part"><a href="{% url 'profile' %}" target="_self" class="has-category"><span class="menu-title"><i class="fas fa-user"></i> Mi cuenta</span></a></li>
@@ -70,7 +70,7 @@
                         <li class="part"><a href="{% url 'get_products' %}" target="_self" class="has-category"><span class="menu-title">{{ item.title }}</span></a></li>
                         {% endif %}
                         {% endfor %} 
-                        <li class="part"><a href="shopinsta.html" target="_self" class="has-category"><span class="menu-title">@pardobymireiapardo</span></a></li>
+                        <li class="part"><a href="{% url 'shopinstagram' %}" target="_self" class="has-category"><span class="menu-title">@pardobymireiapardo</span></a></li>
                         {% if user.is_authenticated %}
                         <li><a class="navbar-brand" href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Logout</a></li>
                         <li class="part"><a href="{% url 'profile' %}" target="_self" class="has-category"><span class="menu-title"><i class="fas fa-user"></i> Mi cuenta</span></a></li>
