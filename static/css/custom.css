@@ -249,6 +249,10 @@ img.profile_prod{
 .profile{
     padding-left: 10px;
 }
+.pp{
+    margin: 0px;
+    padding: 0px !important;
+}
 /*------------------------------------IG----------------------------*/
 #imgig{
     margin-left: 100px;
