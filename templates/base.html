@@ -50,7 +50,11 @@
                     <li class="part"><a href="{% url 'register' %}" target="_self" class="has-category"><span class="menu-title"><i class="fa fa-user-plus"></i> Crea tu cuenta</span></a></li>
                     <li class="part"><a href="{% url 'login' %}" target="_self" class="has-category"><span class="menu-title"><i class="fas fa-user"></i> Mi cuenta</span></a></li>
                     {% endif %}
+                    {% if cart_items|length > 0 %}
+                    <li class="part"><a href="{% url 'see_cart' %}" target="_self" class="has-category"><span class="menu-title grey"><img class='cartmenu' src="{{MEDIA_URL}}images/cart/cart2.png" class='cartmenu' alt="carrito"> {{cart_items|length}}</span></a></li>
+                    {% else %}
                     <li class="part"><a href="{% url 'see_cart' %}" target="_self" class="has-category"><span class="menu-title"><img class='cartmenu' src="{{MEDIA_URL}}images/cart/cart2.png" class='cartmenu' alt="carrito"></span></a></li>
+                    {% endif %}
                 </ul>
                 <div class="dropdown">
                     <button onclick="myFunction()" type="button" id='dropbtn' class="dropbtn navbar-toggle collapsed"
@@ -78,7 +82,11 @@
                         <li><a href="{% url 'register' %}" target="_self" class="has-category"><span class="menu-title"><i class="fa fa-user-plus"></i> Register</span></a></li>
                         <li class="part"><a href="{% url 'login' %}" target="_self" class="has-category"><span class="menu-title"><i class="fas fa-user"></i> Mi cuenta</span></a></li>
                         {% endif %}
+                        {% if cart_items|length > 0 %}
+                        <li class="part"><a href="{% url 'see_cart' %}" target="_self" class="has-category"><span class="menu-title grey"><img class='cartmenu' src="{{MEDIA_URL}}images/cart/cart2.png" class='cartmenu' alt="carrito"> {{cart_items|length}}</span></a></li>
+                        {% else %}
                         <li class="part"><a href="{% url 'see_cart' %}" target="_self" class="has-category"><span class="menu-title"><img class='cartmenu' src="{{MEDIA_URL}}images/cart/cart2.png" class='cartmenu' alt="carrito"></span></a></li>
+                        {% endif %}
                         </ul>
                     </div>
                 </div>
