@@ -85,13 +85,13 @@ hr {
     width: 100%;
 }
 .topc{
-    margin-top:50px;
+    margin-top:45px;
 }
 .top{
     margin-top:20px;
 }
 .bottom{
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 .cabecera{
     width: 100%;
@@ -109,7 +109,7 @@ button{
     border-radius: 0px !important;
 }
 .center{
-    text-align: center;
+    text-align: center !important;
 }
 .right{
     text-align-last: right;
@@ -546,6 +546,9 @@ label{
     }
     .navbar_adjust{
         height:100px;
+    }
+    .login_input{
+        padding-right: 70px;
     }
 }
    
