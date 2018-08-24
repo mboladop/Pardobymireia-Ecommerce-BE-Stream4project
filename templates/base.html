@@ -73,7 +73,7 @@
                         <li class="part"><a href="{% url 'shopinstagram' %}" target="_self" class="has-category"><span class="menu-title">@pardobymireiapardo</span></a></li>
                         {% if user.is_authenticated %}
                         <li class="part"><a href="{% url 'logout' %}" target="_self" class="has-category"><span class="menu-title"><i class="fas fa-user-minus"></i></i> Exit</span></a></li>
-                    <li class="part"><a href="{% url 'profile' %}" target="_self" class="has-category"><span class="menu-title"><i class="fas fa-user-check"></i> Hola @{{ user }}!</span></a></li>
+                        <li class="part"><a href="{% url 'profile' %}" target="_self" class="has-category"><span class="menu-title"><i class="fas fa-user-check"></i> Hola @{{ user }}!</span></a></li>
                          {% else %}
                         <li><a href="{% url 'register' %}" target="_self" class="has-category"><span class="menu-title"><i class="fa fa-user-plus"></i> Register</span></a></li>
                         <li class="part"><a href="{% url 'login' %}" target="_self" class="has-category"><span class="menu-title"><i class="fas fa-user"></i> Mi cuenta</span></a></li>

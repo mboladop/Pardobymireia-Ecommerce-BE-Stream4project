@@ -6,9 +6,15 @@
 
 
 <div class="container checkout_btn">
+<p>
 {% if cart_items|length > 0 %}
-<a href="{% url 'checkout' %}" class="btn" role="button">Pagar</a>
+<a href="{% url 'checkout' %}" class="btn checkbtn" role="button">Pagar</a>
+<form method="POST" action = "{% url 'clear' %}">
+{% csrf_token %} 
+<button class="btn checkbtn" type="submit">Vaciar</button>  
+</form>
 {% endif %}
+</p>
 </div>
 
 

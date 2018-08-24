@@ -34,3 +34,9 @@ def remove_from_cart(request):
              del cart[id]
      request.session['cart'] = cart
      return  redirect('see_cart')
+
+def clear(request):
+    cart = request.session
+    product = Product.objects.all()
+    cart.clear()
+    return redirect('see_cart')

@@ -35,7 +35,7 @@
                         {% endif %}
                 </div>
                 <div class="col-sm-3 col-xs-6">
-                        <input type="number" name="cantidad" class="qt_input" min="1" max="100" placeholder="{{item.quantity}}"></input>
+                        <h4 class='qt'>{{item.quantity}}</h4>
                         <p>
                         <form method="POST" action = "{% url 'remove_from_cart' %}">
                         {% csrf_token %}
