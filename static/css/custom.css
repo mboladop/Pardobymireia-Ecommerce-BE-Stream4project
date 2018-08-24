@@ -246,6 +246,9 @@ img.profile_prod{
     text-align: center;
     padding: 5px;
 }
+.profile{
+    padding-left: 10px;
+}
 /*------------------------------------IG----------------------------*/
 #imgig{
     margin-left: 100px;
@@ -456,11 +459,12 @@ label{
     .navbar-toggle {
         display: block;
     }
-    .dropbtn {
-        background-color: darkgrey;
-        color: white;
-        padding: 16px;
-        cursor: pointer;
+    #dropbtn {
+        background-color: darkgrey !important;
+        color: white !important;
+        padding: 16px !important;
+        cursor: pointer !important;
+        border: 0px !important;
     }
     .dropbtn:hover, .dropbtn:focus {
         background-color: lightgrey;

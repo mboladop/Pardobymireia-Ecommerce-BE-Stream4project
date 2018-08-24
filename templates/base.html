@@ -47,13 +47,13 @@
                     <li class="part"><a href="{% url 'logout' %}" target="_self" class="has-category"><span class="menu-title"></i> Logout</span></a></li>
                     <li class="part"><a href="{% url 'profile' %}" target="_self" class="has-category"><span class="menu-title"><i class="fas fa-user"></i> Mi cuenta</span></a></li>
                     {% else %}
-                    <li class="part"><a href="{% url 'register' %}" target="_self" class="has-category"><span class="menu-title"></i>Crea tu cuenta</span></a></li>
+                    <li class="part"><a href="{% url 'register' %}" target="_self" class="has-category"><span class="menu-title"><i class="fa fa-user-plus"></i> Crea tu cuenta</span></a></li>
                     <li class="part"><a href="{% url 'login' %}" target="_self" class="has-category"><span class="menu-title"><i class="fas fa-user"></i> Mi cuenta</span></a></li>
                     {% endif %}
                     <li class="part"><a href="{% url 'see_cart' %}" target="_self" class="has-category"><span class="menu-title"><img class='cartmenu' src="{{MEDIA_URL}}images/cart/cart2.png" class='cartmenu' alt="carrito"></span></a></li>
                 </ul>
                 <div class="dropdown">
-                    <button onclick="myFunction()" type="button" class="dropbtn navbar-toggle collapsed"
+                    <button onclick="myFunction()" type="button" id='dropbtn' class="dropbtn navbar-toggle collapsed"
                     data-toggle="collapse"
                     data-target="#myCollapsingList">
                     <!--creates collapsed menu icon appearance-->
@@ -72,10 +72,10 @@
                         {% endfor %} 
                         <li class="part"><a href="{% url 'shopinstagram' %}" target="_self" class="has-category"><span class="menu-title">@pardobymireiapardo</span></a></li>
                         {% if user.is_authenticated %}
-                        <li><a class="navbar-brand" href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Logout</a></li>
+                        <li><a href="{% url 'logout' %}" target="_self" class="has-category"><span class="menu-title"><i class="fa fa-sign-out"></i> Logout</span></a></li>
                         <li class="part"><a href="{% url 'profile' %}" target="_self" class="has-category"><span class="menu-title"><i class="fas fa-user"></i> Mi cuenta</span></a></li>
                          {% else %}
-                        <li><a class="navbar-brand" href="{% url 'register' %}"><i class="fa fa-user-plus"></i> Register</a></li>
+                        <li><a href="{% url 'register' %}" target="_self" class="has-category"><span class="menu-title"><i class="fa fa-user-plus"></i> Register</span></a></li>
                         <li class="part"><a href="{% url 'login' %}" target="_self" class="has-category"><span class="menu-title"><i class="fas fa-user"></i> Mi cuenta</span></a></li>
                         {% endif %}
                         <li class="part"><a href="{% url 'see_cart' %}" target="_self" class="has-category"><span class="menu-title"><img class='cartmenu' src="{{MEDIA_URL}}images/cart/cart2.png" class='cartmenu' alt="carrito"></span></a></li>
