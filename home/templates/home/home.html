@@ -39,14 +39,13 @@
 <div class="container contactformbg">
     <div id="contactForm">
         <h1 class='cftitle'>¿Alguna duda?</h1>
-        <h4 class='cftitle'>¡Escribenos!</h4>
+        <h4 class='cftitle'>¡Escríbenos!</h4>
             <form action='https://formspree.io/pardobymireia@gmail.com' method="POST">
                 <input name="name" placeholder="Nombre" type="text" required />
                 <input name="_replyto" placeholder="Email" type="email" required />
                 <input name="message" placeholder="Tema" type="text" required />
                 <textarea placeholder="Consulta"></textarea>
-                <input class="btn btn-success formbtn" type="submit" />
-                <input class="btn btn-success formbtn" type="reset" />
+                <input class="btn btn-success formbtn" type="submit"/>
             </form>
     </div>
 </div>
@@ -67,5 +66,6 @@
         function() {$(this).attr("src","{{MEDIA_URL}}images/bw_img/bw3.png");
     });
     });
+
 </script>
 {% endblock %}
