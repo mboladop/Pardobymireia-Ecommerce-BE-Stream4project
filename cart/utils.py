@@ -17,4 +17,4 @@ def get_cart_items_and_total(cart):
            cart_items.append(cart_item)
            total += cart_item['sub_total']
 
-    return {'cart_items': cart_items, 'total': total }
+    return {'cart_items': cart_items, 'total': total}

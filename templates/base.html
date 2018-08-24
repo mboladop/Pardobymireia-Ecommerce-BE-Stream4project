@@ -50,8 +50,8 @@
                     <li class="part"><a href="{% url 'register' %}" target="_self" class="has-category"><span class="menu-title"><i class="fa fa-user-plus"></i> Crea tu cuenta</span></a></li>
                     <li class="part"><a href="{% url 'login' %}" target="_self" class="has-category"><span class="menu-title"><i class="fas fa-user"></i> Mi cuenta</span></a></li>
                     {% endif %}
-                    {% if cart_items|length > 0 %}
-                    <li class="part"><a href="{% url 'see_cart' %}" target="_self" class="has-category"><span class="menu-title grey"><img class='cartmenu' src="{{MEDIA_URL}}images/cart/cart2.png" class='cartmenu' alt="carrito"> {{cart_items|length}}</span></a></li>
+                    {% if total_cart_items > 0 %}
+                    <li class="part"><a href="{% url 'see_cart' %}" target="_self" class="has-category"><span class="menu-title grey"><img class='cartmenu' src="{{MEDIA_URL}}images/cart/cart2.png" class='cartmenu' alt="carrito"> {{total_cart_items}}</span></a></li>
                     {% else %}
                     <li class="part"><a href="{% url 'see_cart' %}" target="_self" class="has-category"><span class="menu-title"><img class='cartmenu' src="{{MEDIA_URL}}images/cart/cart2.png" class='cartmenu' alt="carrito"></span></a></li>
                     {% endif %}
@@ -68,11 +68,11 @@
                     <div id="myDropdown" class="dropdown-content">
                         <ul class="nav navbar-nav">
                         {% for item in categories %}
-                        {% if item.id == current %}
-                        <li class="part active"><a href="{% url 'get_products' %}" target="_self" class="has-category"><span class="menu-title"><strong></strong>{{ item.title }}</strong></span></a></li>
-                        {% else %}
-                        <li class="part"><a href="{% url 'get_products' %}" target="_self" class="has-category"><span class="menu-title">{{ item.title }}</span></a></li>
-                        {% endif %}
+                            {% if item.id == current %}
+                            <li class="part active"><a href="{% url 'get_products' %}" target="_self" class="has-category"><span class="menu-title"><strong></strong>{{ item.title }}</strong></span></a></li>
+                            {% else %}
+                            <li class="part"><a href="{% url 'get_products' %}" target="_self" class="has-category"><span class="menu-title">{{ item.title }}</span></a></li>
+                            {% endif %}
                         {% endfor %} 
                         <li class="part"><a href="{% url 'shopinstagram' %}" target="_self" class="has-category"><span class="menu-title">@pardobymireiapardo</span></a></li>
                         {% if user.is_authenticated %}
@@ -82,8 +82,8 @@
                         <li><a href="{% url 'register' %}" target="_self" class="has-category"><span class="menu-title"><i class="fa fa-user-plus"></i> Register</span></a></li>
                         <li class="part"><a href="{% url 'login' %}" target="_self" class="has-category"><span class="menu-title"><i class="fas fa-user"></i> Mi cuenta</span></a></li>
                         {% endif %}
-                        {% if cart_items|length > 0 %}
-                        <li class="part"><a href="{% url 'see_cart' %}" target="_self" class="has-category"><span class="menu-title grey"><img class='cartmenu' src="{{MEDIA_URL}}images/cart/cart2.png" class='cartmenu' alt="carrito"> {{cart_items|length}}</span></a></li>
+                        {% if total_cart_items > 0 %}
+                        <li class="part"><a href="{% url 'see_cart' %}" target="_self" class="has-category"><span class="menu-title grey"><img class='cartmenu' src="{{MEDIA_URL}}images/cart/cart2.png" class='cartmenu' alt="carrito"> {{total_cart_items}}</span></a></li>
                         {% else %}
                         <li class="part"><a href="{% url 'see_cart' %}" target="_self" class="has-category"><span class="menu-title"><img class='cartmenu' src="{{MEDIA_URL}}images/cart/cart2.png" class='cartmenu' alt="carrito"></span></a></li>
                         {% endif %}

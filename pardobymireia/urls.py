@@ -13,6 +13,7 @@ from checkout import urls as checkout_urls
 from blog import urls as blog_urls
 from home import urls as home_urls
 from shopinstagram import urls as shopinstagram_urls
+from cart.utils import get_cart_items_and_total
 from products import views
 
 urlpatterns = [
