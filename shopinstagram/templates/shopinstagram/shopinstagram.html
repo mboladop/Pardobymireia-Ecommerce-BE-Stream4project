@@ -9,7 +9,13 @@
         </div>
 
         <hr>
-
+        {% for combined_data in image_ig_urls %}
+        {% if combined_data.productUrl > 0 %}
+        <a href='/products/profile/{{combined_data.productUrl}}'><img src="{{combined_data.image}}" alt=""></a>
+        {% else %}
+        <img src="{{combined_data.image}}" alt="">
+        {% endif %}
+        {% endfor %}
         <!-- <div class="row 2">
             {% for product in products %}
             <div class="col-sm-4 ig" >

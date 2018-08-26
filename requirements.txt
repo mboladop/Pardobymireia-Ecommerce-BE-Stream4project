@@ -6,6 +6,7 @@ bs4==0.0.1
 certifi==2018.8.13
 chardet==3.0.4
 click==6.7
+coverage==4.5.1
 dj-database-url==0.5.0
 Django==2.0.6
 django-admin-sortable2==0.6.21
@@ -39,6 +40,7 @@ easy-thumbnails==2.5
 Flask==1.0.2
 gunicorn==19.9.0
 html5lib==0.9999999
+httplib2==0.11.3
 idna==2.7
 itsdangerous==0.24
 Jinja2==2.10
@@ -53,6 +55,7 @@ python-dateutil==2.7.3
 pytz==2018.5
 requests==2.19.1
 s3transfer==0.1.13
+simplejson==3.16.0
 six==1.11.0
 stripe==2.5.0
 Unidecode==0.4.21
