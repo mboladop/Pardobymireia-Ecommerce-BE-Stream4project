@@ -251,6 +251,16 @@ img.profile_prod{
     top:25%;
     left: 33.3%;
 }
+.profile_ig{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+.icon_ig{
+    display: block;
+    margin: 20px;
+    width: 15%;
+}
 .product_price{
     text-align: center;
     padding: 5px;
