@@ -458,6 +458,9 @@ textarea { font-family: 'Avenir-Book', sans-serif !important; height: 80px; resi
 label{
     font-family: 'Avenir-Book', sans-serif !important;  
 }
+input#id_email{
+    background-color: #f2f2f2;
+}
 /*------------------------------------Mobile vs----------------------------*/
 @media screen and (max-width: 1254px) {
     
