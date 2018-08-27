@@ -26,6 +26,6 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-SYSTEM_EMAIL = 'pardobymireia@gmail.com.com'
+SYSTEM_EMAIL = 'pardobymireia@gmail.com'
 
 

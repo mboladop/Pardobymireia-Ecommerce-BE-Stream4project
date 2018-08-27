@@ -163,9 +163,6 @@ footer {
     text-align: center;
     padding: 20px 0px;
 }
-.novedades{
-    width: 100%;
-}
 /*----------------------------------------BLOG--------------------------------------*/
 .container.blog{
     width: 50vw;
@@ -391,7 +388,7 @@ input, textarea {
   width: 280px; 
   padding: .4em;
 }
-textarea { font-family: 'Avenir-Book', sans-serif !important; height: 80px; resize: none; background-color: white;}
+textarea { font-family: 'Avenir-Book', sans-serif !important; height: 80px; resize: none; background-color: rgba(255, 255, 255, 0.795);}
 
 .formbtn { 
   font-family: 'Avenir-Book', sans-serif !important;
