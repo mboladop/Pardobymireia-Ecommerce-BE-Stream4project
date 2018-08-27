@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/mboladop/Pardobymireia-ecommerce-BE-stream4project.svg)](https://travis-ci.org/mboladop/Pardobymireia-ecommerce-BE-stream4project)
+[![Build Status](https://travis-ci.org/mboladop/Pardobymireia-Ecommerce-BE-Stream4project.svg)](https://travis-ci.org/mboladop/Pardobymireia-Ecommerce-BE-Stream4project)
 
 
 # Pardo by Mireia ecommerce Website
