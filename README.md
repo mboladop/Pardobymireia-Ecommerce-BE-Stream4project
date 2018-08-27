@@ -13,33 +13,60 @@ This is an ecommerce website for people to shop all Pardo by Mireia´s latest pr
  
 ### How does it work
  
-This website uses **Python3** as primary language and **Django** as the framework to route viewers through the site. The site is styled with **Bootstrap**, **css3**,  **Font Awesome** and **Google Fonts**. The chat data is stored in a **sql DB**in local and a **Postgres DB** in production. It also uses **Amazon Web Services (AWS)** to store all the static for production.
+This website uses **Python3** as primary language and **Django** as the framework to route viewers through the site. The site is styled with **Bootstrap**, **css3**,  **Font Awesome** and **Google Fonts**. The chat data is stored in a **sql DB** in local and a **Postgres DB** in production. It also uses **Amazon Web Services (AWS)** to store all the static for production and **Stripe** as payment platform.
+
+## Instagram API 
+
+This part of the project comes from a specific need of the client. The idea is basically to simplify for the customer the search of the most wanted products which are normally the ones promoted through the social media profiles of the brand.
+The shop instagram section created mimicks the brands real IG profile and conects every item features in the instagram profile to the product profile in the DB (if it exists/is still available).
+
+The conection to the IG API is done in the views.py of the shopinstagram app. Once the conection is made the data was [jsonified](http://jsonparseronline.com/) and the data needed was the photo url. Once this was clear product.models.py was modified to include a new text field where the link provided by IG as a url needed to be pasted if the product existed in the database.
+
+If the product has been featured in IG when hover on the photo there is a button that links to the product profile and can be easily added to the cart.
 
 
 ## Features
  
 ### Existing Features
 - Simple and clean layout.
-- Easy UX display.
-- Minimal simple Landing.
-- Scrollable access to navigate through the conversation.
+- Easy and intuitive UX display.
+- Clean Landing.
+- Contact forms.
+- Stripe as payment method.
+- Shop Instagram section were the website connects to IG API and mimicks the brands profile linking the pictures of the available products with their profiles.
+- Easy hover add to cart button.
+- Login/out, Register and password reset available.
+- Blog and New/in sections.
+
+### Features Left to Implement
+- New in section responsive.
+- Email send with email.js or own smtp.(There´s a virtual one that displays in the terminal)
+- EN/ES version.
+- Sizes for anillos category 1-6.
+- Add two more images to the Landing page.(Client´s request)
+
 
 ## Technologies Used
 
-- **HTML5**, **CSS3** and **Python3**
+- **HTML5**, **CSS3**,  and very lightly **Javascript**
   - Base languages used to create website.
-- **Flask** as the framework for Python.
+- **Django 2** as the framework for **Python3**.
 - [Bootstrap](http://getbootstrap.com/)
     - We use **Bootstrap** to give the project a simple, responsive layout.
 - [Google Fonts](http://googlefonts.com/)
     - We use **Google Fonts** to give our project the fonts.
-- [Postgres DB](http://googlefonts.com/)
-    - We use **MongoDB** to store the chats.
-- [sql DB](http://googlefonts.com/)
-    - We use **MongoDB** to store the chats.
+- [Postgres DB](https://www.postgresql.org/)
+    - We use **Postgres DB** to store the static in production.
+- [sql DB](https://www.mysql.com/)
+    - We use **sql DB** to store the static in local.
+- [Stripe](https://stripe.com)
+    - We use **Stripe** as payment platform.
+- [IG API](https://www.instagram.com/developer/)
+    - We use **IG API** as a way to simplify purchases for the client and better acces to specific products of the brand pictured through the social media platform.
 
-## Testing
-- All code used on the site has been tested to ensure everything is working as expected
+
+## Manual Testing
+- All code/links/forms used on the site have been tested to ensure everything is working as expected.
 - Site viewed and tested in the following browsers:
   - Google Chrome
   - Safari
@@ -50,6 +77,24 @@ This website uses **Python3** as primary language and **Django** as the framewor
   - Macbook 13" and 15"
   - Samsung Galaxy
 
+## Automated Testing
+
+All automated testing (81% coverage) was done using Travis-CI. There is automated testing done for each app. 
+To use Coverage:
+
+$ pip3 install coverage 
+$ coverage run manage.py test (app name)
+$ coverage html 
+**(creates an htmlcov folder I ignored)**
+$ .gitignore
+$ python3 manage.py test
+
+This permits viewing the percentage of cover your tests run:
+
+$ coverage run manage.py test
+$ coverage report
+
+
 # How the project looks and works on different browsers and screen sizes:
 
 ![Responsive Demo](https://raw.githubusercontent.com/mboladop/Babel-app-project-Stream3/master/responsive.gif "Responsive Demo")
@@ -59,12 +104,22 @@ To test it in different devices i started using the console toggle device toolba
 To fix this I created a specific and new mobile version. For this purpose i downloaded Xcode simulator and served the website via [npm package serve](https://www.npmjs.com/package/serve) to be able to access it instantly and remotely through my own phone.
 
 
-## Deployment
-1. Navigate to the repository where you're setting up your deployments.
-2. Under your repository name, click Settings.
-3. Go to GitHub Pages section.
-4. Click and choose master branch.
-5. Click save.
+## Deployment (Heroku)
+
+1. Create workspace in Visual Studio Code.
+2. Associate it with GitHub repository.
+3. Open a new app in Heroku (Europe) choose GitHub as deployment method and choose the repository of your project. This will enable yopur app to be updated with each push you make to Github if you wish.
+4. The first time make sure you deploy it manually and then enable automatic deployments choosing master as the branch.
+5. On your project workspace:
+	$ pip3 freeze --local > requirements.txt
+	$ pip3 install gunicorn
+  - Check gunicorn is now in requirements.txt by repeating : 
+  $ pip3 freeze --local > requirements.txt 
+  $ touch Procfile         
+  - Open Procfile and paste:               
+    web: gunicorn chat:app
+  $ git push 
+  - In this case I used a **Postgres DB**, **Stripe** and **Amazon Web Services (AWS)**. I was using a bashrc file to store the **DATABASE_URL**, **AWS KEYS**, **SECRET KEYS**, **STRIPE PUBLISHABLE/SECRET KEY** and **IG API ACCESS TOKEN/ USER ID** make sure to include these in the Heroku settings Config vars.
 
 
 ## Contributing
@@ -72,22 +127,30 @@ To fix this I created a specific and new mobile version. For this purpose i down
 ### Getting the code up and running
 1. Firstly you will need to clone this repository by running the ```git clone <project's Github URL>``` command.
 2. After you've done that you'll need to make sure that you have **npm** installed. Link [npm package serve](https://www.npmjs.com/package/serve)
-3. The project will now run locally.
-4. Make changes to the code and if you think it belongs in here then just submit a pull request.
+3. You must include in bash with **export** the configuration variables above mentioned. Also including: **DEBUG** and the **DJANGO_SETTINGS_MODULE**.
+4. The project will now run locally.
+5. Make changes to the code and if you think it belongs in here then just submit a pull request.
 
 ## Credits
 
 ### Media
 - The animated Gifs of the different projects from the [Giphy Capture App](https://giphy.com/apps/giphycapture)
+- The photos used in this site were obtained from the clients database. 
+- The form design for the user login was an adapted version of the one found in [Colorlib](https://colorlib.com)
 
-### Inspiration
+### Information
+- The information used to create this site (materials, sizes and the rest of the pdfs) were provided by the client **Pardo by Mireia Pardo**.
 
-- The inspiration used to create this site was from a number of sources:
-     - WhatsApp, desktop and mobile vs.
-     - Slack,  desktop and mobile vs.
+### Inspiration and tutorials
+- [How to Create a Password Reset View By Vitor Freitas](https://simpleisbetterthancomplex.com/tutorial/2016/09/19/how-to-create-password-reset-view.html)
+
+- [Python Client for Instagram API](http://instagram.com/developers https://github.com/facebookarchive/python-instagram)
+
+- The aesthetical inspiration used to create this site was from a number of sources:
+     - [Different jewelry ecommerce sites.](https://raw.githubusercontent.com/mboladop/Pardobymireia-Ecommerce-BE-Stream4project/master/README_linked_files/wireframe.pdf)
+     
 
 ## Project Live:
-
-[Link to project](https://babel-chat-app.herokuapp.com/)
+[Link to project](https://mboladop-mireia-ecommerce.herokuapp.com/)
 
 
