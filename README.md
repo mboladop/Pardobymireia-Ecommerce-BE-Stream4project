@@ -2,8 +2,7 @@
 
 
 # Pardo by Mireia ecommerce Website
-
-<!-- ![Desktop Demo](https://raw.githubusercontent.com/mboladop/Babel-app-project-Stream3/master/stream4.gif "Desktop Demo") -->
+![Desktop Demo](https://raw.githubusercontent.com/mboladop/Pardobymireia-Ecommerce-BE-Stream4project/master/README_linked_files/stream4desktop.gif "Desktop Demo")
  
 ## Overview
  
@@ -20,7 +19,7 @@ This website uses **Python3** as primary language and **Django** as the framewor
 This part of the project comes from a specific need of the client. The idea is basically to simplify for the customer the search of the most wanted products which are normally the ones promoted through the social media profiles of the brand.
 The shop instagram section created mimicks the brands real IG profile and conects every item features in the instagram profile to the product profile in the DB (if it exists/is still available).
 
-The conection to the IG API is done in the views.py of the shopinstagram app. Once the conection is made the data was [jsonified](http://jsonparseronline.com/) and the data needed was the photo url. Once this was clear product.models.py was modified to include a new text field where the link provided by IG as a url needed to be pasted if the product existed in the database.
+The conection to the IG API is done in the views.py of the shopinstagram app. This was the hardest part cause getting the API token isnt as easy as the documentation found explains. They also advice the posibility of the token being disabled anytime given the fact the IG API is experiencing major changes. Once the conection is made the data was [jsonified](http://jsonparseronline.com/) and the data needed was the photo url. Once this was clear product.models.py was modified to include a new text field where the link provided by IG as a url needed to be pasted if the product existed in the database.
 
 If the product has been featured in IG when hover on the photo there is a button that links to the product profile and can be easily added to the cart.
 
@@ -43,7 +42,8 @@ If the product has been featured in IG when hover on the photo there is a button
 - Email send with email.js or own smtp.(There´s a virtual one that displays in the terminal)
 - EN/ES version.
 - Sizes for anillos category 1-6.
-- Add two more images to the Landing page.(Client´s request)
+- Add two more images to the Landing page.(Client´s request).
+- Update a way to do the shop instagram section ensuring the token or finding another method.
 
 
 ## Technologies Used
@@ -97,8 +97,13 @@ $ coverage report
 
 # How the project looks and works on different browsers and screen sizes:
 
-![Responsive Demo](https://raw.githubusercontent.com/mboladop/Babel-app-project-Stream3/master/responsive.gif "Responsive Demo")
+### Front-end Design
+To design a quality front-end design of the ecommerce I decided the best way of aproaching it was to develop the front end in a different repository to the one used for the back-end. Once the design met the expectations, I adapted it to the back-end already developed to meet the clients needs. 
+![Static front-end repository of the ecommerce](https://mboladop.github.io/Pardobymireia-Ecommerce-Static-Stream4project/)
+This way of planning the project helped me to focus high styling goals, these weren´t limited by any crash that trying to develop front-end and back-end toguether might´ve caused. In general I found this solution extremely effective and learned how to connect a finished front-end with a finished back-end, to overcome bugs that might occur during the process and know how to fix them.
 
+![Responsive Demo](https://raw.githubusercontent.com/mboladop/Pardobymireia-Ecommerce-BE-Stream4project/master/README_linked_files/stream4responsive.gif "Responsive Demo")
+ 
 # BUGS
 To test it in different devices i started using the console toggle device toolbar, when I fixed all the versions for the different tablets and mobile screens I opened the website  from my Iphone and realised the display was not looking as it should.
 To fix this I created a specific and new mobile version. For this purpose i downloaded Xcode simulator and served the website via [npm package serve](https://www.npmjs.com/package/serve) to be able to access it instantly and remotely through my own phone.
@@ -147,7 +152,7 @@ To fix this I created a specific and new mobile version. For this purpose i down
 - [Python Client for Instagram API](http://instagram.com/developers https://github.com/facebookarchive/python-instagram)
 
 - The aesthetical inspiration used to create this site was from a number of sources:
-     - [Different jewelry ecommerce sites.](https://raw.githubusercontent.com/mboladop/Pardobymireia-Ecommerce-BE-Stream4project/master/README_linked_files/wireframe.pdf)
+     - Different jewelry ecommerce sites.You can download the Wireframe:[HERE](https://raw.githubusercontent.com/mboladop/Pardobymireia-Ecommerce-BE-Stream4project/master/README_linked_files/wireframe.pdf)
      
 
 ## Project Live:
