@@ -44,6 +44,9 @@ If the product has been featured in IG when hover on the photo there is a button
 - Sizes for anillos category 1-6.
 - Add two more images to the Landing page.(Client´s request).
 - Update a way to do the shop instagram section ensuring the token or finding another method.
+- Make the private User panel dynamic able to acces past orders.
+- Make wishlist app.
+- Make personal data available from the user panel.
 
 
 ## Technologies Used

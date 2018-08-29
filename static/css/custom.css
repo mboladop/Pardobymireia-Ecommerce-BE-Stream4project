@@ -10,9 +10,6 @@ body, a, p, h1, h2, h3, h4, h5, h6, pre {
 a {
   color: black;  
 } 
-.grey{
-    color: gray;
-} 
 .banner {
     text-align: center;
     background-color: black;
@@ -32,7 +29,6 @@ a {
 .dropdown {
     display: none;
 }
-
 #header_logo{
     margin-left: 10%;
     padding-top: 5%;
@@ -41,13 +37,6 @@ header {
     position: fixed;
     display: block;
     color: white;
-}
-hr {
-    height: 1px;
-    border: none;
-    color: #D9DADC;
-    background-color: #D9DADC;
-    margin: 0;
 }
 .megamenu {
     padding-left: 5%;
@@ -71,7 +60,6 @@ hr {
     font-family: 'Avenir-Book', sans-serif;
     font-size: 5em;
     color:#000000;
-    /* font-weight: bold; */
     background: #fafafa;
     opacity: 0.5;
     position: absolute;
@@ -86,15 +74,6 @@ hr {
     margin: 0px;
     padding: 0px;
     width: 100%;
-}
-.topc{
-    margin-top:45px;
-}
-.top{
-    margin-top:20px;
-}
-.bottom{
-    margin-bottom: 30px;
 }
 .cabecera{
     width: 100%;
@@ -127,6 +106,62 @@ button{
     font-weight: bold;
     font-family: 'Avenir-Book', sans-serif !important;
 }
+.topc{
+    margin-top:45px;
+}
+.top{
+    margin-top:20px;
+}
+.bottom{
+    margin-bottom: 30px;
+}
+/*-----CONTACT FORM-----*/
+* { box-sizing: border-box;}
+h1{ margin: 0; }
+.container.contactformbg {
+    width:100vw;
+    background-color: #ffffff;
+    opacity: 0.9;
+}
+.cftitle{
+    color: #ffffff;
+}
+#contactForm { 
+  display: none;
+  z-index: 99;
+  border: 6px;
+  padding: 2em;
+  width: 400px;
+  text-align: center;
+  background: #000000;
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%)
+}
+input, textarea { 
+  margin: .8em auto;
+  background-color: white;
+  font-family: 'Avenir-Book', sans-serif !important; 
+  text-transform: inherit; 
+  font-size: inherit;
+  display: block; 
+  width: 280px; 
+  padding: .4em;
+}
+textarea { font-family: 'Avenir-Book', sans-serif !important; height: 80px; resize: none; background-color: rgba(255, 255, 255, 0.795);}
+.formbtn { 
+  font-family: 'Avenir-Book', sans-serif !important;
+  width: 140px;
+  display: inline-block;
+  background: #ffffff;
+  color: #000000;
+  font-weight: 100;
+  font-size: 1.2em;
+  border: none;
+  height: 30px;
+}
 /*------CAROUSEL-----*/
 .carousel_container{
     position: relative;
@@ -139,7 +174,6 @@ button{
     width: 100%;
     max-height: 570px;
 }
-
 /*------FOOTER-----*/
 .container.footer{
     background-color: white;
@@ -188,7 +222,7 @@ footer {
 .navbar_adjust_blog{
     height:10px;
 }
-/*------------------------------------USER PANEL EX----------------------------*/
+/*--------------------------------------USER PANEL EX------------------------------*/
 .userp_ex{
     text-align: center;
     font-weight: 400;
@@ -199,15 +233,13 @@ footer {
     padding-bottom:400px; 
     width: 80%;
 }
-/*------------------------------------REST OF PROD HOVER----------------------------*/
+/*---------------------------------------PRODUCT-------------------------------------*/
 .yes {
     position: relative;
     width: 100%;
     max-width: 400px;
     padding: 0px;
 }
-
-/*------------------------------------PENDIENTES----------------------------*/
 .overlay2 {
     position: absolute;
     top: 0em;
@@ -219,11 +251,9 @@ footer {
     transition: .3s ease;
     background-color: #fafafa
   }
-  
   .yes:hover .overlay2 {
     opacity: 0.8;
   }
-/*------------------------------------PRODUCT----------------------------*/
 .product_description{
     text-align: left;
     padding: 20px 20px;
@@ -269,7 +299,7 @@ img.profile_prod{
     margin: 0px;
     padding: 0px !important;
 }
-/*------------------------------------IG----------------------------*/
+/*--------------------------------------IG------------------------------------*/
 #imgig{
     margin-left: 100px;
     margin-bottom: 100px;
@@ -294,14 +324,12 @@ img.profile_prod{
     padding-top: 30px;
     overflow: hidden;
 }
-
 .igyes {
     position: relative;
     width: 100%;
     max-width: 400px;
     padding: 0px;
   }
-  
   .image {
     display: block;
     width: 100%;
@@ -324,11 +352,9 @@ img.profile_prod{
     transition: .3s ease;
     background-color: black;
   }
-  
   .igyes:hover .overlay {
     opacity: 0.5;
   }
-  
   container.icon {
     font-size: 100px;
     position: absolute;
@@ -338,70 +364,15 @@ img.profile_prod{
     -ms-transform: translate(-50%, -50%);
     text-align: center;
   }
-  
   .icons{
     display: block;
     margin: 20px;
     width:40%;
   }
-
   .icons:hover {
     color: #eee;
     opacity: 1;
   }
-
-/*----------------------CONTACT FORM-----------------------*/
-* { box-sizing: border-box;}
-
-h1{ margin: 0; }
-
-.container.contactformbg {
-    width:100vw;
-    background-color: #ffffff;
-    opacity: 0.9;
-}
-.cftitle{
-    color: #ffffff;
-}
-#contactForm { 
-  display: none;
-  z-index: 99;
-  border: 6px;
-  padding: 2em;
-  width: 400px;
-  text-align: center;
-  background: #000000;
-  position: fixed;
-  top:50%;
-  left:50%;
-  transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%)
-}
-
-input, textarea { 
-  margin: .8em auto;
-  background-color: white;
-  font-family: 'Avenir-Book', sans-serif !important; 
-  text-transform: inherit; 
-  font-size: inherit;
-  display: block; 
-  width: 280px; 
-  padding: .4em;
-}
-textarea { font-family: 'Avenir-Book', sans-serif !important; height: 80px; resize: none; background-color: rgba(255, 255, 255, 0.795);}
-
-.formbtn { 
-  font-family: 'Avenir-Book', sans-serif !important;
-  width: 140px;
-  display: inline-block;
-  background: #ffffff;
-  color: #000000;
-  font-weight: 100;
-  font-size: 1.2em;
-  border: none;
-  height: 30px;
-}
-
 /*-------------------------------------Cartex------------------------------*/
 .row.p_in_cart {
     padding: 10px 0px;
