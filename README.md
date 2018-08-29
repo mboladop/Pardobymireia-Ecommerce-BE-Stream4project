@@ -82,17 +82,17 @@ If the product has been featured in IG when hover on the photo there is a button
 All automated testing (81% coverage) was done using Travis-CI. There is automated testing done for each app. 
 To use Coverage:
 
-$ pip3 install coverage 
-$ coverage run manage.py test (app name)
-$ coverage html 
+$pip3 install coverage 
+$coverage run manage.py test (app name)
+$coverage html 
 **(creates an htmlcov folder I ignored)**
-$ .gitignore
-$ python3 manage.py test
+$.gitignore
+$python3 manage.py test
 
 This permits viewing the percentage of cover your tests run:
 
-$ coverage run manage.py test
-$ coverage report
+$coverage run manage.py test
+$coverage report
 
 
 # How the project looks and works on different browsers and screen sizes:
