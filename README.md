@@ -81,19 +81,22 @@ If the product has been featured in IG when hover on the photo there is a button
 
 All automated testing (81% coverage) was done using Travis-CI. There is automated testing done for each app. 
 To use Coverage:
-
-$pip3 install coverage 
-$coverage run manage.py test (app name)
-$coverage html 
+```
+$ pip3 install coverage 
+$ coverage run manage.py test (app name)
+$ coverage html 
+```
 **(creates an htmlcov folder I ignored)**
-$.gitignore
-$python3 manage.py test
+```
+$ .gitignore
+$ python3 manage.py test
+```
 
 This permits viewing the percentage of cover your tests run:
-
-$coverage run manage.py test
-$coverage report
-
+```
+$ coverage run manage.py test
+$ coverage report
+```
 
 # How the project looks and works on different browsers and screen sizes:
 
@@ -116,14 +119,20 @@ To fix this I created a specific and new mobile version. For this purpose i down
 3. Open a new app in Heroku (Europe) choose GitHub as deployment method and choose the repository of your project. This will enable yopur app to be updated with each push you make to Github if you wish.
 4. The first time make sure you deploy it manually and then enable automatic deployments choosing master as the branch.
 5. On your project workspace:
+  ```
 	$ pip3 freeze --local > requirements.txt
 	$ pip3 install gunicorn
+  ```
   - Check gunicorn is now in requirements.txt by repeating : 
+  ```
   $ pip3 freeze --local > requirements.txt 
-  $ touch Procfile         
+  $ touch Procfile   
+  ```      
   - Open Procfile and paste:               
     web: gunicorn chat:app
+  ```
   $ git push 
+  ```
   - In this case I used a **Postgres DB**, **Stripe** and **Amazon Web Services (AWS)**. I was using a bashrc file to store the **DATABASE_URL**, **AWS KEYS**, **SECRET KEYS**, **STRIPE PUBLISHABLE/SECRET KEY** and **IG API ACCESS TOKEN/ USER ID** make sure to include these in the Heroku settings Config vars.
 
 
