@@ -8,7 +8,7 @@
  
 ### What is this website for?
  
-This is an ecommerce website for people to shop all Pardo by Mireia´s latest products and keep them informed of the brands whereabouts.
+This is an ecommerce website for people to shop all **Pardo by Mireia Pardo** latest products and keep them informed of the brands whereabouts.
  
 ### How does it work
  
