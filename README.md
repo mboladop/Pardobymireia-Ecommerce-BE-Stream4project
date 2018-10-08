@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/mboladop/Pardobymireia-Ecommerce-BE-Stream4project.svg)](https://travis-ci.org/mboladop/Pardobymireia-Ecommerce-BE-Stream4project)
 
 
-# Pardo by Mireia Pardo ecommerce Website
+# Pardo by Mireia Pardo Ecommerce Website
 ![Desktop Demo](https://raw.githubusercontent.com/mboladop/Pardobymireia-Ecommerce-BE-Stream4project/master/README_linked_files/stream4desktop.gif "Desktop Demo")
  
 ## Overview
